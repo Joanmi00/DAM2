@@ -1,0 +1,734 @@
+<!DOCTYPE html><html><head>
+      <title>XML</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/joange/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="emmagatzemament-amb-documents-xml">Emmagatzemament amb documents XML</h1>
+
+<h2 class="mume-header" id="1-introducci%C3%B3">1. Introducci&#xF3;</h2>
+
+<p>En primer lloc, com a classe de treball base per als nostres exemples, anem a definir la classe <code>Modul</code>, un <em>Bean</em> que implementar&#xE0; la interf&#xED;cie <code>Serializable</code>, per si en un futur volem escriure a/desde fitxers:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">class</span> <span class="token class-name">Modul</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">{</span>
+    <span class="token class-name">String</span> nom<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> hores<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> nota<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Modul</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// Constructor buit</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Modul</span><span class="token punctuation">(</span><span class="token class-name">String</span> nom<span class="token punctuation">,</span> <span class="token keyword">int</span> hores<span class="token punctuation">,</span> <span class="token keyword">double</span> nota<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nom<span class="token operator">=</span>nom<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>hores<span class="token operator">=</span>hores<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nota<span class="token operator">=</span>nota<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getModul</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nom<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getHores</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>hores<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getNota</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nota<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+</pre><p>Tamb&#xE9; tenim aquesta estructura per a poder generar els m&#xF2;duls</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Moduls2</span><span class="token punctuation">{</span>
+
+    <span class="token comment">// Definim els vectors per inicialitzar dades</span>
+    <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> moduls<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&quot;Acc&#xE9;s a Dades&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Programaci&#xF3; de serveis i processos&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Desenvolupament d&apos;interf&#xED;cies&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Programaci&#xF3; Multim&#xE8;dia i dispositiud m&#xF2;bils&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Sistemes de Gesti&#xF3; Empresarial&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Empresa i iniciativa emprenedora&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span>  hores<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> notes<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">8.45</span><span class="token punctuation">,</span> <span class="token number">9.0</span><span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">7.34</span><span class="token punctuation">,</span> <span class="token number">8.2</span><span class="token punctuation">,</span> <span class="token number">7.4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre><p>Quan volem guardar dades que puguen ser llegides per diferents aplicacions i plataformes, el m&#xE9;s adient &#xE9;s fer &#xFA;s de formats est&#xE0;ndards d&apos;emmagatzemament, que m&#xFA;ltiples aplicacions puguen entendre. Un cas molt concret s&#xF3;n els llenguatges de marques, i el m&#xE9;s conegut &#xE9;s l&apos;est&#xE0;ndard <code>XML</code> (<em>eXtensible Markup Language</em>).</p>
+<p>Amb els documents XML estructurem la informaci&#xF3; intercalant marques o etiquetes entre la informaci&#xF3;. Aquestes etiquetes tenen un principi i un final, i poden aniar-se dins d&apos;altres, aix&#xED; com contenir informaci&#xF3; textual. Com que la informaci&#xF3; ser&#xE0; textual, no tenim el problema de la diferent representaci&#xF3; de dades, ja que qualsevol dada, siga del tipus que siga es passar&#xE0; a text. Per tal d&apos;evitar tamb&#xE9; el problema dels diferents sistemes de codificaci&#xF3; de text, XML permet incloure a la cap&#xE7;alera del document la codificaci&#xF3; que s&apos;ha utilitzat per guardar-lo.</p>
+<p>La forma d&apos;emmagatzemar la informaci&#xF3; en XML, de forma jer&#xE0;rquica s&apos;assembla molt a la forma que ho fan els objectes en una aplicaci&#xF3;, de manera que aquests poden traduir-se d&apos;una forma relativament c&#xF2;moda a un document XML.</p>
+<p>Ac&#xED; tenim les dades que volem emmagatzemar:</p>
+<table>
+<thead>
+<tr>
+<th>M&#xF2;dul</th>
+<th>Hores</th>
+<th>Qualificaci&#xF3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acc&#xE9;s a Dades</td>
+<td>6</td>
+<td>8.45</td>
+</tr>
+<tr>
+<td>Programaci&#xF3; de serveis i processos</td>
+<td>3</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>Desenvolupament d&apos;interf&#xED;cies</td>
+<td>6</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>Programaci&#xF3; Multim&#xE8;dia i dispositius m&#xF2;bils</td>
+<td>5</td>
+<td>7.34</td>
+</tr>
+<tr>
+<td>Sistemes de Gesti&#xF3; Empresarial</td>
+<td>5</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>Empresa i iniciativa emprenedora</td>
+<td>3</td>
+<td>7.4</td>
+</tr>
+</tbody>
+</table>
+<p>Aquesta es podr&#xED;a expressar de diferents formes amb XML:</p>
+<ul>
+<li><strong>Utilitzant nom&#xE9;s etiquetes</strong>:</li>
+</ul>
+<pre data-role="codeBlock" data-info="xml" class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>curs</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Acc&#xE9;s a Dades<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>8.45<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Programaci&#xF3; de serveis i processos<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>9.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Desenvolupament d&apos;interf&#xED;cies<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>8.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Programaci&#xF3; Multim&#xE8;dia i dispositiud m&#xF2;bils<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>7.34<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Sistemes de Gesti&#xF3; Empresarial<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>8.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nom</span><span class="token punctuation">&gt;</span></span>Empresa i iniciativa emprenedora<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nom</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hores</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hores</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>qualificacio</span><span class="token punctuation">&gt;</span></span>7.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>qualificacio</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>curs</span><span class="token punctuation">&gt;</span></span>
+</pre><ul>
+<li><strong>Utilitzant etiquetes i atributs</strong>:</li>
+</ul>
+<pre data-role="codeBlock" data-info="xml" class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>curs</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span> <span class="token attr-name">nom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Acc&#xE9;s a Dades<span class="token punctuation">&quot;</span></span> <span class="token attr-name">hores</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>6<span class="token punctuation">&quot;</span></span> <span class="token attr-name">qualificacio</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>8.45<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span> <span class="token attr-name">nom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Programaci&#xF3; de serveis i processos<span class="token punctuation">&quot;</span></span> <span class="token attr-name">&quot;hores&quot;</span><span class="token attr-value"><span class="token punctuation">=</span>3</span> <span class="token attr-name">qualificacio</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>9.0<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+    &lt;modul nom =&quot;Desenvolupament d&apos;interf&#xED;cies&quot; hores=&quot;6&quot; qualificacio=&quot;8.0&quot; &gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span> <span class="token attr-name">nom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Programaci&#xF3; Multim&#xE8;dia i dispositiud m&#xF2;bils<span class="token punctuation">&quot;</span></span> <span class="token attr-name">hores</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>5<span class="token punctuation">&quot;</span></span> <span class="token attr-name">qualificacio</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>7,34<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span> <span class="token attr-name">nom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Sistemes de Gesti&#xF3; Empresarial<span class="token punctuation">&quot;</span></span> <span class="token attr-name">hores</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>5<span class="token punctuation">&quot;</span></span> <span class="token attr-name">&quot;qualificacio&quot;</span><span class="token attr-value"><span class="token punctuation">=</span>8.2</span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modul</span> <span class="token attr-name">nom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Empresa i iniciativa emprenedora<span class="token punctuation">&quot;</span></span>  <span class="token attr-name">hores</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>3<span class="token punctuation">&quot;</span></span> <span class="token attr-name">qualificacio</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>7.4<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>curs</span><span class="token punctuation">&gt;</span></span>
+</pre><h2 class="mume-header" id="2-analitzadors-xml">2. Analitzadors XML</h2>
+
+<p>Un parser o analitzador XML &#xE9;s una classe que permet analitzar un fitxer XML i extreure&apos;n la informaci&#xF3; d&apos;ell, relacionant-la segons la seua posici&#xF3; en la jerarquia.</p>
+<p>Els analitzadors, segons la seua forma de funcionar poden ser:</p>
+<ul>
+<li><strong>Analitzadors seq&#xFC;encials o sint&#xE0;ctics,</strong> que van extraient el contingut segons es van descobrint les etiquetes d&apos;obertura i tancament. S&#xF3;n molt r&#xE0;pids, per&#xF2; tenen el problema que cal llegir tot el document per tal d&apos;accedir a una part concreta. En Java existeix l&apos;analitzador <code>SAX</code> (<em>Simple API for XML</em>) com a analitzador seq&#xFC;encial.</li>
+<li><strong>Analitzadors jer&#xE0;rquics,</strong> que solen ser els m&#xE9;s utilitzats, i que guarden totes les dades del document XML en mem&#xF2;ria, en forma d&apos;estructura jerarquitzada (<code>DOM</code> o <em>Model d&apos;Objectes del Document</em>, sent els preferits per a aplicacions que hagen de llegir les dades de forma m&#xE9;s cont&#xED;nua.</li>
+</ul>
+<h2 class="mume-header" id="3-el-model-dobjectes-del-document-dom">3. El Model d&apos;Objectes del Document (<code>DOM</code>)</h2>
+
+<p>El DOM (Document Object Model) &#xE9;s l&apos;estructura especificada pel <code>W3C</code> on s&apos;emmagatzema la informaci&#xF3; dels documents XML. El DOM ha estat lligat sobretot al m&#xF3;n web, amb HTML i Javascript com a principals impulsors. En Java, el DOM s&apos;implementa fent &#xFA;s d&apos;interf&#xED;cies.</p>
+<p>La interf&#xED;cie principal del DOM en Java &#xE9;s <code>Document</code>, i representa <strong>tot el document XML</strong>. Com que es tracta d&apos;una interf&#xED;cie, aquesta podr&#xE0; implementar-se en diverses classes.</p>
+<blockquote>
+<p><em><strong>Recordeu...</strong></em></p>
+<p>Una interf&#xED;cie &#xE9;s una esp&#xE8;cie de plantilla per constru&#xEF;r classes, i es compon generalment d&apos;un conjunt de declaracions de cap&#xE7;aleres de m&#xE8;todes, sense implementar, que especifiquen la forma de comportar-se per una o diverses classes. A m&#xE9;s, una classe pot implementar una o m&#xE9;s interf&#xED;cies. En aquest cas, la classe haur&#xE0; de declarar i definir tots els m&#xE8;todes de cadascuna de les interf&#xED;cies, o declarar-se com a classe abstracta.</p>
+<p>Tampoc hi ha que confondre una interf&#xED;cie amb una classe abstracta, ja que hi ha algunes difer&#xE8;ncies, com que la interf&#xED;cie t&#xE9; tots els m&#xE8;todes abstractes; no pot declarar variables d&apos;inst&#xE0;ncia; una classe pot implementar v&#xE0;ries interf&#xED;cies, per&#xF2; no heretar de v&#xE0;ries superclasses; i la interf&#xED;cie no t&#xE9; per qu&#xE8; pert&#xE0;nyer a cap jerarqu&#xED;a, de manare que classes que no tinguen cap relaci&#xF3; d&apos;her&#xE8;ncia poden implementar la mateixa interf&#xED;cie.</p>
+</blockquote>
+<p>A banda de <code>Document</code>, el W3C tamb&#xE9; defineix la classe abstracta <code>DocumentBuilder</code>, que permet crear el DOM a partir de l&apos;XML. A m&#xE9;s, s&apos;especifica la classe <code>DocumentBuilderFactory</code>, que ens permet <em>fabricar</em> <code>DocumentBuilder</code>s, ja que al ser abstracta no es pot instanciar directament.</p>
+<p>Cal dir, com a advert&#xE8;ncia, que Java ofereix moltes llibreries des d&apos;on importar Document. Les llibrer&#xED;es que anem a utilitzar per parsejar XMLs seran:</p>
+<ul>
+<li>La llibrer&#xED;a <code>java.xml.parsers.*</code>, que oferiran les classes <code>DocumentBuilderFactory</code> i <code>DocumentBuilder</code>, i</li>
+<li>La llibrer&#xED;a <code>org.w3c.dom.*</code> per a la classe <code>Document</code>.</li>
+</ul>
+<h3 class="mume-header" id="31-documentbuilder-i-documentbuilderfactory">3.1. <code>DocumentBuilder</code> i <code>DocumentBuilderFactory</code></h3>
+
+<p>Com hem comentat, <code>DocumentBuilder</code> defineix una API per obtenir inst&#xE0;ncies del DOM a partir d&apos;un document XML. Per tal d&apos;obtindre una inst&#xE0;ncia de la classe, s&apos;ha de rec&#xF3;rrer a la factor&#xED;a <code>DocumentBuilderFactory</code>, i concretament al m&#xE8;tode <code>newDocumentBuilder()</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">DocumentBuilderFactory</span><span class="token punctuation">.</span><span class="token function">newDocumentBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Per altra banda, per tal de llegir i interpretar el document XML, la classe <code>DocumentBuilderFactory</code> proporciona el m&#xE8;tode <code>parse</code>, que parseja un XML indicat per un <code>File</code>, i retorna un objecte <code>Document</code>.</p>
+<p>Veiem-ho tot amb un exemple. Anem a treballar emmagatzemant dades sobre els m&#xF2;duls del curs amb XML. Per a aix&#xF2;, s&apos;ha creat una classe anomenada <code>XMLLib</code> per tal de treballar amb documents XML. Despr&#xE9;s explicarem el funcionament del paquet en concret, per&#xF2; ara anem a centrar-nos en obrir documents XML i la seua posterior lectura.</p>
+<p>El seg&#xFC;ent m&#xE8;tode d&apos;aquesta classe ens servir&#xE0;, per tal d&apos;obrir un document XML, parsejar-lo i retornar  el DOM generat en un <code>Document</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token class-name">Document</span> <span class="token class-name">ObreXML</span><span class="token punctuation">(</span><span class="token class-name">String</span> nom<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span><span class="token class-name">SAXException</span><span class="token punctuation">,</span> <span class="token class-name">ParserConfigurationException</span><span class="token punctuation">,</span> <span class="token class-name">FileNotFoundException</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// Creem una inst&#xE0;ncia de DocumentBuilderFactory</span>
+    <span class="token class-name">DocumentBuilderFactory</span> dbFactory <span class="token operator">=</span> <span class="token class-name">DocumentBuilderFactory</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Amb la inst&#xE0;ncia de DocumentBuilderFactory creem un DocumentBuilder</span>
+    <span class="token class-name">DocumentBuilder</span> dBuilder <span class="token operator">=</span> dbFactory<span class="token punctuation">.</span><span class="token function">newDocumentBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//I utilitzem el m&#xE8;tode &quot;parse&quot; de DocumentBuilder per obtindre el document</span>
+    <span class="token class-name">Document</span> doc <span class="token operator">=</span> dBuilder<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>nom<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> doc<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>Cal dir que la funci&#xF3; anterior podr&#xED;a haver-se simplificat sense utilitzar les declaracions intermitges:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token class-name">Document</span> <span class="token class-name">ObreXML</span><span class="token punctuation">(</span><span class="token class-name">String</span> nom<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span><span class="token class-name">SAXException</span><span class="token punctuation">,</span> <span class="token class-name">ParserConfigurationException</span><span class="token punctuation">,</span> <span class="token class-name">FileNotFoundException</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token class-name">DocumentBuilderFactory</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newDocumentBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>nom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>Per altra banda, la classe <code>DocumentBuilder</code> ens permet tamb&#xE9; crear un DOM nou, amb el m&#xE8;tode <code>newDocument()</code>. A&#xE7;&#xF2; ens servir&#xE0; despr&#xE9;s per tal d&apos;emmagatzemar els documents XML. El primer que haurem de fer &#xE9;s crear un DOM nou amb <code>newDocument()</code>, anar afegint els elements i despr&#xE9;s emmagatzemar-lo. En apartats posteriors, veurem com fer tot a&#xE7;&#xF2;. De moment anem a centrar-nos en la interpretaci&#xF3; i lectura del DOM.</p>
+<p>Podeu trobar m&#xE9;s informaci&#xF3; sobre les classes <code>DocumentBuilder</code>i <code>DocumentBuilderFactory</code> a l&apos;API de l&apos;OpenJDK:</p>
+<ul>
+<li><a href="http://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.xml/javax/xml/parsers/DocumentBuilder.html">http://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.xml/javax/xml/parsers/DocumentBuilder.html</a></li>
+<li><a href="http://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.xml/javax/xml/parsers/DocumentBuilderFactory.html">http://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.xml/javax/xml/parsers/DocumentBuilderFactory.html</a></li>
+</ul>
+<h3 class="mume-header" id="32-classes-i-m%C3%A8todes-del-dom">3.2. Classes i m&#xE8;todes del DOM</h3>
+
+<p>Fins ara hem vist com obrir i parsejar un document XML amb <code>DocumentBuilder</code> per crear un objecte de tipus <code>Docuement</code>. En aquest apartat veurem com treballar amb aquest document per tal d&apos;accedir als diferents elements.</p>
+<p>Com sabem, el DOM t&#xE9; una estructura jer&#xE0;rquica, formada per nodes. Els diferents tipus de <strong>nodes</strong> que ens podem trobar s&#xF3;n:</p>
+<ul>
+<li><code>Document</code>, que &#xE9;s el node principal i representa tot l&apos;XML,</li>
+<li><code>Element</code>, que representa les diferents etiquetes (incl&#xF2;s l&apos;arrel),</li>
+<li><code>TextElement</code>, que representa el contingut d&apos;una etiqueta de text,</li>
+<li><code>Attribute</code>, que representa els atributs.</li>
+</ul>
+<p>Totes aquestes interf&#xED;cies deriven de la interf&#xED;cie <code>Node</code>, pel que heretaran els seus atributs i m&#xE8;todes, i a m&#xE9;s, aportaran atributs i m&#xE8;todes propis.</p>
+<p>Veiem els m&#xE8;todes m&#xE9;s importants de cada interf&#xED;cie:</p>
+<ul>
+<li><strong>M&#xE8;todes de la interf&#xED;cie <code>Node</code></strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>M&#xE8;tode</th>
+<th>Descripci&#xF3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;obtenci&#xF3; d&apos;informaci&#xF3;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>String getNodeName</code></td>
+<td>Obt&#xE9; el nom del node actual</td>
+</tr>
+<tr>
+<td><code>short getNodeType()</code></td>
+<td>Obt&#xE9; el tipus del node (ELEMENT_NODE, ATTRIBUTE_NODE, TEXT_NODE...</td>
+</tr>
+<tr>
+<td><code>String getNodeValue()</code></td>
+<td>Obt&#xE9; el valor del node</td>
+</tr>
+<tr>
+<td><code>NodeList getChildNodes()</code></td>
+<td>Obt&#xE9; una llista amb els nodes fills</td>
+</tr>
+<tr>
+<td><code>Node getFirstChild()</code></td>
+<td>Retorna el primer fill</td>
+</tr>
+<tr>
+<td><code>Node getLastChild()</code></td>
+<td>Retorna l&apos;&#xFA;ltim fill</td>
+</tr>
+<tr>
+<td><code>NamedNodeMap getAttributes()</code></td>
+<td>Retorna una llista amb els atributs del node</td>
+</tr>
+<tr>
+<td><code>Node getParentNode()</code></td>
+<td>Retorna el node pare</td>
+</tr>
+<tr>
+<td><code>String getTextContent()</code></td>
+<td>Retorna el text contingut en l&apos;element i el dels seus descendents</td>
+</tr>
+<tr>
+<td><code>boolean hasChildNodes()</code></td>
+<td>Retorna cert si el node t&#xE9; algun fill</td>
+</tr>
+<tr>
+<td><code>boolean hasAttributes()</code></td>
+<td>Retorna cert si el node t&#xE9; algun atribut</td>
+</tr>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;escriptura</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Node appendChild(Node node)</code></td>
+<td>Afig un node nou com a &#xFA;ltim node dels fills</td>
+</tr>
+<tr>
+<td><code>void removeChild(Node node)</code></td>
+<td>Elimina el node indicat dels nodes fills</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>M&#xE8;todes de la interf&#xED;cie <code>Element</code></strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>M&#xE8;tode</th>
+<th>Descripci&#xF3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;obtenci&#xF3; d&apos;informaci&#xF3;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>String getAttribute(String nom)</code></td>
+<td>Retorna el valor de l&apos;atribut indicat pel nom</td>
+</tr>
+<tr>
+<td><code>NodeList getElementsByTagName(String nom)</code></td>
+<td>Retorna una llista dels nodes descendents que coincideixen amb el nom indicat</td>
+</tr>
+<tr>
+<td><code>boolean hasAttribute(String nom)</code></td>
+<td>Retorna cert si l&apos;element t&#xE9; l&apos;atribut indicat</td>
+</tr>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;escriptura</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>void setAttribute(String nom,String valor)</code></td>
+<td>Afig un atribut a l&apos;element, amb el nom i el valor indicats</td>
+</tr>
+<tr>
+<td><code>void removeAttribute(String nom)</code></td>
+<td>Elimina l&apos;atribut indicat pel nom</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>M&#xE8;todes de la interf&#xED;cie <code>Document</code></strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>M&#xE8;tode</th>
+<th>Descripci&#xF3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;obtenci&#xF3; d&apos;informaci&#xF3;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Element getDocumentElement()</code></td>
+<td>Retorna l&apos;element arrel del document</td>
+</tr>
+<tr>
+<td><code>NodeList getElementsByTagName(String nom)</code></td>
+<td>Retorna una llista dels nodes descendents que coincideixen amb el nom indicat</td>
+</tr>
+<tr>
+<td><strong>M&#xE8;todes relacionats amb l&apos;escriptura</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Element createElement(String nom)</code></td>
+<td>Crea un nou element amb el nom indicat</td>
+</tr>
+<tr>
+<td><code>Text createTextNode(String text)</code></td>
+<td>Crea un nou element de text</td>
+</tr>
+<tr>
+<td><code>Node appendChild(Node node)</code></td>
+<td>Afig un nou node fill</td>
+</tr>
+</tbody>
+</table>
+<p>Els objectes de tipus <code>NodeList</code>, que representen una llista de nodes, ofereix el m&#xE8;tode <code>item</code> per accedir als diferents nodes de la llista, indicant el seu ordre.</p>
+<h3 class="mume-header" id="33-lectura-de-documents-xml">3.3. Lectura de documents XML</h3>
+
+<p>Veiem tot el comentat a l&apos;apartat anterior amb el nostre cas pr&#xE0;ctic sobre els m&#xF2;duls. En la nostra classe <code>XMLLib</code> hem creat un m&#xE8;tode <code>MostraXML</code>, que rep un element de tipus <code>Document</code> (tal com ens el retorna <code>ObreXML</code>) i mostrar&#xE0; el seu contingut per pantalla:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">MostraXML</span><span class="token punctuation">(</span><span class="token class-name">Document</span> doc<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> 
+</pre><p>Per tal de comen&#xE7;ar a llegir el document, el primer que haurem de fer &#xE9;s obtenir l&apos;arrel del document, amb <code>getDocumentElement()</code>, que retorna un objecte de tipus <code>Element</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Element</span> arrel <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">getDocumentElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</pre><p>Amb aquest element arrel, ja podr&#xED;em mostrar tot el contingut amb <code>getTextContent()</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arrel<span class="token punctuation">.</span><span class="token function">getTextContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Per&#xF2; el que ens interessa &#xE9;s rec&#xF3;rrer tot el DOM i accedir als seus elements. Per a aix&#xF2;, a partir d&apos;aquest element arrel, seguirem els seg&#xFC;ents passos:</p>
+<ol>
+<li>Buscarem totes les etiquetes <code>&lt;modul&gt;</code> amb <code>getElementsByTagName</code>. Aquest m&#xE8;tode ens torna una llista de nodes (objecte de tipus <code>NodeList</code>).</li>
+<li>Caldr&#xE0; rec&#xF3;rrer la llista de nodes (<code>NodeList</code>) per accedir a cada element. Per a aix&#xF2; cal fer &#xFA;s del m&#xE8;tode <code>item()</code>, que ens retornar&#xE0; un element de tipus <code>Node</code>, i que caldr&#xE0; convertir a <code>Element</code> de forma expl&#xED;cita.</li>
+<li>Per a cada element, accedirem al nom del node per mostrar el nom i l&apos;ordre, amb <code>getNodeName()</code></li>
+<li>Busquem les diferents etiquetes que es troben dins de cada m&#xF2;dul (&apos;nom&apos;, &apos;hores&apos; i &apos;qualificacio&apos;) amb <code>getElementsByTagName</code>.</li>
+<li>El pas anterior ens haur&#xE0; donat de nou un <code>NodeList</code> per a cada tipus d&apos;etiqueta. Com que nom&#xE9;s tindrem un element, nom&#xE9;s cal accedir a l&apos;<code>item(0)</code>.</li>
+<li>Cal tindre en compte que amb l&apos;anterior tindrem la primera (i &#xFA;nica) etiqueta &apos;nom&apos;, &apos;hores&apos; o &apos;qualificacio&apos; del m&#xF2;dul, per&#xF2; encara no estem en el contingut, ja que aquest &#xE9;s un element de tipus <code>TEXT_NODE</code>. Per accedir a ell, haurem d&apos;accedir al primer fill de l&apos;etiqueta (<code>getFirstChild()</code>) i obtenir el seu valor amb <code>getNodeValue</code></li>
+</ol>
+<pre data-role="codeBlock" data-info="java" class="language-java">    <span class="token comment">// Obtindrem una llista de nodes (Pas 1)</span>
+    <span class="token class-name">NodeList</span> moduls <span class="token operator">=</span> arrel<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;modul&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Per a cada node (Pas 2)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> moduls<span class="token punctuation">.</span><span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Element</span> el <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Element</span><span class="token punctuation">)</span> moduls<span class="token punctuation">.</span><span class="token function">item</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Mostra el nom del node (Pas 3)</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>el<span class="token punctuation">.</span><span class="token function">getNodeName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// I mostrem el valor de les diferents etiquetes (Passos 4, 5 i 6)</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Nom: &quot;</span> <span class="token operator">+</span> el<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;nom&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">item</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFirstChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getNodeValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hores: &quot;</span> <span class="token operator">+</span> el<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;hores&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">item</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFirstChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getNodeValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Qualificaci&#xF3;: &quot;</span> <span class="token operator">+</span> el<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">&quot;qualificacio&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">item</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFirstChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getNodeValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="34-escriptura-de-documents-xml">3.4. Escriptura de documents XML</h3>
+
+<p>Anem ara a la part d&apos;escriptura dels documents XML. Pera aix&#xF2;, partirem d&apos;un fitxer que ja cont&#xE9; la informaci&#xF3; en format binari dels m&#xF2;duls, el llegirem, i importarem la seua informaci&#xF3; a format XML. La funci&#xF3; tindr&#xE0; la seg&#xFC;ent cap&#xE7;alera:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">ImportaObj</span><span class="token punctuation">(</span><span class="token class-name">String</span> fitxer<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span><span class="token class-name">ParserConfigurationException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span><span class="token punctuation">,</span> <span class="token class-name">TransformerException</span>  
+</pre><p>Com veiem, rep un string, que far&#xE0; refer&#xE8;ncia al fitxer en format binari que anem a tractar.</p>
+<p>El primer que haurem de fer &#xE9;s llegir el fitxer d&apos;objectes mitjan&#xE7;ant un <code>ObjectInputStream</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ObjectInputStream</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>fitxer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>I crear un <code>Document</code> Xml buit, ajudant-nos de les classe <code>DocumentBuilder</code> i <code>DocumentBuilderFactory</code>:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Document</span> doc <span class="token operator">=</span> <span class="token class-name">DocumentBuilderFactory</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newDocumentBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Una vegada tenim el document buit, creem l&apos;element arrel (curs), i l&apos;afegim al document:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Element</span> arrel <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;curs&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+doc<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>arrel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Recordem que accedirem al fitxer d&apos;objectes, pel que haurem de con&#xE9;ixer exactament com &#xE9;s la classe que volem llegir, i accedir als m&#xE8;todes corresponents per tal d&apos;obtenir-ne informaci&#xF3;.</p>
+<p>Per a aix&#xF2;, en primer lloc, cal definir un objecte de tipus m&#xF2;dul:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Modul</span> m<span class="token punctuation">;</span>
+</pre><p>I anirem llegint el fitxer d&apos;objectes amb el m&#xE8;tode readObject de File:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java">m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Modul</span><span class="token punctuation">)</span> f<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Una vegada hem llegit un objecte, crearem l&apos;etiqueta que engloba a cadascun d&apos;ells: l&apos;etiqueta m&#xF2;dul:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Element</span> modul <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;modul&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>I dins d&apos;ella, i a mesura que extraiem les diferents propietats de l&apos;objecte <code>Modul</code>, anirem creant nodes fills i afegint-los al m&#xF2;dul. Per exemple, per al nom del m&#xF2;dul:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Element</span> nom <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;nom&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+nom<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">getModul</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+modul<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>nom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Com veiem, hem creat un objecte de tipus <code>Element</code> amb l&apos;etiqueta &apos;nom&apos;, i li hem afegit com a fill un node de tipus text (<code>TEXT_NODE</code>), que hem extret directament de l&apos;objecte <code>Modul m</code> amb la seua funci&#xF3; pr&#xF2;pia <code>getModul()</code>. A m&#xE9;s, hem afegit aquesta etiqueta a l&apos;etiqueta <code>&lt;modul&gt;</code>, amb <code>appendChild</code>.</p>
+<p>Haurem de fer el mateix per a les hores de cada m&#xF2;dul i la qualificaci&#xF3;, per&#xF2; per a aix&#xF2;, haurem de tindre en compte que els m&#xE8;todes <code>getHores</code> i <code>getNota</code> no tornen un <code>String</code>, sin&#xF2; un <code>int</code> i un <code>double</code>, pel que caldr&#xE0; convertir-los a text:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Element</span> hores <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;hores&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+hores<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">getHores</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+modul<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>hores<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Element</span> qualificacio <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;qualificacio&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+qualificacio<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">getNota</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+modul<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>qualificacio<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Tot aquest procediment, el posarem dins un bucle que llisca tot el fitxer d&apos;objectes. Una vegada tinguem llegit cadascun dels m&#xF2;duls, els haurem d&apos;afegir a l&apos;element arrel amb:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java">arrel<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>modul<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>I ja tindrem en arrel el nostre document XML. Ara ens quedar&#xED;a convertir aquest objecte de tipus <code>Element</code> en una cadena de text per tal de poder escriure&apos;l al disc. Per aix&#xF2; farem &#xFA;s de la utilitat <code>Transformer</code>.</p>
+<p><strong>Transformer</strong></p>
+<p>Java ens oferix la utilitat <code>Transformer</code> per convertir informaci&#xF3; entre diferents formats jer&#xE0;rquics, com per exemple, l&apos;objecte <code>Document</code> que cont&#xE9; el DOM del nostre XML, a un fitxer de text XML.</p>
+<p>La classe <code>Transformer</code>, igual que <code>DocumentBuilder</code> &#xE9;s tamb&#xE9; una classe abstracta, pel que tamb&#xE9; requereix d&apos;un <em>factory</em>, per poder-se instanciar.</p>
+<p>La classe <code>Transformer</code> treballa amb dos tipus adaptadors. Els adaptadors s&#xF3;n classes que fan compatibles jerarquies diferents. Aquests adaptadors s&#xF3;n <code>Source</code> i <code>Result</code>. Les classes que implementen aquests adaptadors s&apos;encarregaran de fer compatibles els diferents tipus de contenidors al que requerisca la classe <code>Transformer</code>. Aix&#xED; doncs, i per clarificar, disposem de les classes <code>DOMSource</code>, <code>SAXSource</code> o <code>StreamSource</code>, que s&#xF3;n adaptadors del contenidor de la font d&apos;informaci&#xF3; per a DOM, SAX o Stream; i de <code>DOMResult</code>, <code>SAXResult</code> i <code>StreamResult</code> com a adaptadors equivalents al contenidor dest&#xED;.</p>
+<p>Per al nostre cas, com que tenim un DOM i el volem convertir a Stream, necessitarem un <code>DomSource</code> i un <code>StreamResult</code>. Veiem el codi necessari per fer a&#xE7;&#xF2;:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Transformer</span> trans <span class="token operator">=</span> <span class="token class-name">TransformerFactory</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newTransformer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DOMSource</span> source <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DOMSource</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">StreamResult</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StreamResult</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>fitxer<span class="token operator">+</span><span class="token string">&quot;.xml&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>El primer que hem fet &#xE9;s crear un objecte de tipus <code>Transformer</code> amb el m&#xE8;tode <code>newTransformer()</code>  d&apos;una inst&#xE0;ncia (<code>newInstance()</code>) de la <em>factor&#xED;a</em> de Transformers <code>TransformerFactory</code>.</p>
+<p>Despr&#xE9;s hem definit l&apos;orige (<code>source</code>) i el resultat (<code>result</code>) per a la transformaci&#xF3;, sent l&apos;orige un <code>DomSource</code> creat a partir del <code>doc</code> que cont&#xE9; el nostre document, i el resultat un <code>StreamResult</code>, que escriur&#xE0; l&apos;stream en disc a trav&#xE9;s d&apos;un <code>FileOutputStream</code>.</p>
+<p>I finalment, fem la transformaci&#xF3; d&apos;un element a altre, el que autom&#xE0;ticament generar&#xE0; el fitxer XML d&apos;eixida:</p>
+<pre data-role="codeBlock" data-info="java" class="language-java">trans<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="4-binding-xml">4. Binding XML</h2>
+
+<p>La t&#xE8;cnica del Binding consisteix a generar classes Java amb formats concrets, com per exemple XML, de manera que cada etiqueta o atribut d&apos;XML es correspon amb una propietat de certa classe. Aquesta correspond&#xE8;ncia s&apos;anomena <em>mapat</em>.</p>
+<p>En Java existeixen diferents llibreries per al mapat o binding: JAXB, JuBX, XMLBinding, etc. JAXB (Java Architecture for XML Binding) &#xE9;s una potent biblioteca que s&apos;ha incorporat en l&apos;est&#xE0;ndard des de JDK 6, per&#xF2; s&apos;ha suprimit en la versi&#xF3; 11, i es suggereix que s&apos;incloga com a paquet de tercers. JAXB fa &#xFA;s d&apos;anotacions per aconseguir la informaci&#xF3; necess&#xE0;ria per mapar el binding. Les anotacions s&#xF3;n classes especials de Java que permeten associar informaci&#xF3; i funcionalitat als objectes, sense interferir en l&apos;estructura del model de dades. Les anotacions poden associar-se a un paquet, a una classe, a un atribut o a un par&#xE0;metre, i es declaren amb el s&#xED;mbol @ davant del nom de l&apos;anotaci&#xF3;. Quan el compilador detecta una anotaci&#xF3;, crea una inst&#xE0;ncia i la injecta dins l&apos;element afectat, sense interferir en la classe en s&#xED;. Quan una aplicaci&#xF3; necessita de la informaci&#xF3; de les anotacions, poden obtenir la inst&#xE0;ncia injectada.</p>
+<p>Per exemple, en la classe M&#xF2;dul que ten&#xED;em definida, far&#xED;em &#xFA;s de l&apos;anotaci&#xF3; <code>@XmlRootElement</code> per indicar l&apos;element arrel del m&#xF2;dul, i les anotacions <code>@XmlElement</code>, per indicar que els setters de la classe escriuran tamb&#xE9; elements XML.</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token annotation punctuation">@XmlRootElement</span>
+<span class="token keyword">class</span> <span class="token class-name">Modul</span> <span class="token punctuation">{</span>
+
+	<span class="token class-name">String</span> nom<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> hores<span class="token punctuation">;</span>
+	<span class="token keyword">double</span> nota<span class="token punctuation">;</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getNom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> nom<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token annotation punctuation">@XmlElement</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setNom</span><span class="token punctuation">(</span><span class="token class-name">String</span> nom<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nom <span class="token operator">=</span> nom<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+
+	<span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getHores</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> hores<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token annotation punctuation">@XmlElement</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setHores</span><span class="token punctuation">(</span><span class="token keyword">int</span> hores<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>hores <span class="token operator">=</span> hores<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getNota</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> nota<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+	<span class="token annotation punctuation">@XmlElement</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setNota</span><span class="token punctuation">(</span><span class="token keyword">double</span> nota<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nota <span class="token operator">=</span> nota<span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</pre><p>Amb a&#xE7;&#xF2; tindr&#xED;em nom&#xE9;s la classe amb anotacions preparada per guardar un m&#xF2;dul com a document XML. Per guardar tota la jerarqu&#xED;a hauriem de crear la classe Curs, que contindria un ArrayList de m&#xF2;duls.</p>
+<p>Pel que fa a aquest curs, no aprofundirem m&#xE9;s en aquesta t&#xE8;cnica, ja que per als nostres objectius, ens &#xE9;s suficient amb el parseig d&apos;XML que hem vist en apartats anteriors.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -1,0 +1,22 @@
+com/ieseljust/edd/scenemaker/Renderizable.java
+ com.ieseljust.edd.scenemaker.Renderizable
+com/ieseljust/edd/scenemaker/RemoteManager.java
+ com.ieseljust.edd.scenemaker.RemoteManager
+com/ieseljust/edd/scenemaker/Cercle.java
+ com.ieseljust.edd.scenemaker.Cercle
+com/ieseljust/edd/scenemaker/Quadrat.java
+ com.ieseljust.edd.scenemaker.Quadrat
+com/ieseljust/edd/scenemaker/Rectangle.java
+ com.ieseljust.edd.scenemaker.Rectangle
+com/ieseljust/edd/scenemaker/Ellipse.java
+ com.ieseljust.edd.scenemaker.Ellipse
+com/ieseljust/edd/scenemaker/Figures.java
+ com.ieseljust.edd.scenemaker.Figures
+com/ieseljust/edd/scenemaker/Cli.java
+ com.ieseljust.edd.scenemaker.Cli
+com/ieseljust/edd/scenemaker/Linia.java
+ com.ieseljust.edd.scenemaker.Linia
+com/ieseljust/edd/scenemaker/Escena.java
+ com.ieseljust.edd.scenemaker.Escena
+com/ieseljust/edd/scenemaker/Renderer.java
+ com.ieseljust.edd.scenemaker.Renderer
