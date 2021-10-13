@@ -29,7 +29,6 @@ class Ellipse : Figura {
     this.radiY = radiY
   }
   
-  
   override fun describeMe() {
     /*
     * Mètode que mostra en mode text una descripció de la figura per la consola.

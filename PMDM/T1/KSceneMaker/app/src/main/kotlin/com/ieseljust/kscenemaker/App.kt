@@ -36,7 +36,6 @@ class App {
     }
   }
   
-  
   private fun addFigura(figura: List<String>) {
     when (figura[0]) {
       "rectangle" -> {
@@ -146,8 +145,7 @@ class App {
         }
         
         "dimensions" -> {
-          // TODO: Agafar les dimensions de l'ordre
-          // i modificar les propietats de l'escena
+          // Agafar les dimensions de l'ordre i modificar les propietats de l'escena
           try {
             escena.tamX = components[1].toInt()
             escena.tamY = components[2].toInt()
@@ -157,7 +155,6 @@ class App {
               "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n dimensions x y\u001B[0m"
             )
           }
-          break
         }
         
         "list" -> escena.renderText()
@@ -169,7 +166,7 @@ class App {
             // Descarrega l'index de figures del servidor remot
             val liniaFitxers: ArrayList<String>? = RemoteManager.download("index.php") // Pot ser null
             // Ús del safe Call Operator
-            var fitxers: List<String>? = liniaFitxers?.get(0)?.split("<br/>")
+            val fitxers: List<String>? = liniaFitxers?.get(0)?.split("<br/>")
             
             for (fitxer in fitxers.orEmpty()) println(fitxer)
           } catch (e: Exception) {
@@ -200,15 +197,14 @@ class App {
                   // Agafar les dimensions de l'ordre
                   // i modificar les propietats de l'escena
                   try {
-                    escena.tamX = components[1].toInt()
-                    escena.tamY = components[2].toInt()
+                    escena.tamX = items[1].toInt()
+                    escena.tamY = items[2].toInt()
                   } catch (e: java.lang.Exception) {
                     // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                     println(
                       "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n dimensions x y\u001B[0m"
                     )
                   }
-                  break
                 }
               }// When
             }
@@ -226,7 +222,6 @@ class App {
           println("\u001B[31m Figura no reconeguda \u001B[0m")
         }
       }
-      
     } while (true)
   }
 }
