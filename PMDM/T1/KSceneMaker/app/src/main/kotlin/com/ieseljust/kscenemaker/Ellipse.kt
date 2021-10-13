@@ -14,10 +14,21 @@ class Ellipse : Figura {
   // Constructors secundaris
   constructor() : super() //Sense arguments
   
+  constructor(radiX: Int, radiY: Int) : super() {
+    this.radiX = radiX
+    this.radiY = radiY
+  }
+  
+  constructor(x: Int, y: Int, radiX: Int, radiY: Int) : super(x, y) {
+    this.radiX = radiX
+    this.radiY = radiY
+  }
+  
   constructor(x: Int, y: Int, radiX: Int = 50, radiY: Int = 50, color: Color = Color.BLACK) : super(x, y, color) {
     this.radiX = radiX
     this.radiY = radiY
   }
+  
   
   override fun describeMe() {
     /*

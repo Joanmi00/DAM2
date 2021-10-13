@@ -13,6 +13,14 @@ class Quadrat : Figura {
   // Constructors secundaris
   constructor() : super() //Sense arguments
   
+  constructor(costat: Int) : super() {
+    this.costat = costat
+  }
+  
+  constructor(x: Int, y: Int, costat: Int) : super(x, y) {
+    this.costat = costat
+  }
+  
   constructor(x: Int, y: Int, costat: Int = 100, color: Color = Color.BLACK) : super(x, y, color) {
     this.costat = costat
   }

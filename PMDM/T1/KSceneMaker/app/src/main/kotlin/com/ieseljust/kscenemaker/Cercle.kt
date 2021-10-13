@@ -13,6 +13,14 @@ class Cercle : Figura {
   // Constructors secundaris
   constructor() : super() //Sense arguments
   
+  constructor(radi: Int) : super() {
+    this.radi = radi
+  }
+  
+  constructor(x: Int, y: Int, radi: Int) : super(x, y) {
+    this.radi = radi
+  }
+  
   constructor(x: Int, y: Int, radi: Int = 50, color: Color = Color.BLACK) : super(x, y, color) {
     this.radi = radi
   }

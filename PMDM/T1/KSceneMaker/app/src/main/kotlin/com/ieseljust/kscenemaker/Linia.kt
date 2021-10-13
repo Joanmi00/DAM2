@@ -14,6 +14,16 @@ class Linia : Figura {
   // Constructors secundaris
   constructor() : super() //Sense arguments
   
+  constructor(x2: Int, y2: Int) : super() {
+    this.x2 = x2
+    this.y2 = y2
+  }
+  
+  constructor(x: Int, y: Int, x2: Int, y2: Int) : super(x, y) {
+    this.x2 = x2
+    this.y2 = y2
+  }
+  
   constructor(x: Int, y: Int, x2: Int = 100, y2: Int = 100, color: Color = Color.BLACK) : super(x, y, color) {
     this.x2 = x2
     this.y2 = y2

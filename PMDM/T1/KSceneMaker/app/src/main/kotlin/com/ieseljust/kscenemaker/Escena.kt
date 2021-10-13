@@ -3,10 +3,10 @@
 package com.ieseljust.kscenemaker
 
 
-class Escena constructor(private var tamX: Int = 800, private var tamY: Int = 600) {
+class Escena constructor(var tamX: Int = 800, var tamY: Int = 600) {
   // Hem utilitzat el constructor primari, per declarar
   // els atributs, que seran mutables, per tant tindran
-  // getteers i setters, i els hem donat valor per defecte.
+  // getters i setters, i els hem donat valor per defecte.
   // Anb açò no cal utilitzar el constructor secundari (constructor)
   // ni el mètode init perquè ja estan inicialitzats.
   // Tapoc cal definir mètodes accessors, ja que

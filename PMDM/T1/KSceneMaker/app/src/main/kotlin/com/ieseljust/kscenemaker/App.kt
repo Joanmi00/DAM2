@@ -54,7 +54,6 @@ class App {
         } catch (err: Exception) {
           println("\u001B[31m Arguments incorrectes \u001B[0m")
         }
-        
       }
       
       "quadrat" -> {
@@ -71,7 +70,6 @@ class App {
         } catch (err: Exception) {
           println("\u001B[31m Arguments incorrectes \u001B[0m")
         }
-        
       }
       
       "ellipse" -> {
@@ -89,7 +87,6 @@ class App {
         } catch (err: Exception) {
           println("\u001B[31m Arguments incorrectes \u001B[0m")
         }
-        
       }
       
       "cercle" -> {
@@ -106,7 +103,6 @@ class App {
         } catch (err: Exception) {
           println("\u001B[31m Arguments incorrectes \u001B[0m")
         }
-        
       }
       
       "linia" -> {
@@ -131,7 +127,6 @@ class App {
       }
       
     } // when
-    
   }
   
   fun startCli() {
@@ -150,18 +145,25 @@ class App {
           addFigura(components)
         }
         
-        // TODO
         "dimensions" -> {
-          // TO-DO: Agafar les dimensions de l'ordre
+          // TODO: Agafar les dimensions de l'ordre
           // i modificar les propietats de l'escena
-          
+          try {
+            escena.tamX = components[1].toInt()
+            escena.tamY = components[2].toInt()
+          } catch (e: java.lang.Exception) {
+            // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+            println(
+              "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n dimensions x y\u001B[0m"
+            )
+          }
+          break
         }
         
         "list" -> escena.renderText()
         
         "render" -> escena.renderScene()
         
-        // TODO
         "remotelist" -> {
           try {
             // Descarrega l'index de figures del servidor remot
@@ -169,17 +171,13 @@ class App {
             // Ús del safe Call Operator
             var fitxers: List<String>? = liniaFitxers?.get(0)?.split("<br/>")
             
-            for (fitxer in fitxers.orEmpty()) {
-              println(fitxer)
-            }
-            
+            for (fitxer in fitxers.orEmpty()) println(fitxer)
           } catch (e: Exception) {
             println("Excepció en la càrrega del fitxer: ")
             println(e)
           }
         }
         
-        // TODO
         "get" -> {
           try {
             val fitxer: String = components[1]
@@ -199,23 +197,27 @@ class App {
                 }
                 
                 "dimensions" -> {
-                  // TO-DO:
-                  // Modificar les dimensions de l'escena
-                  // especificades al fitxer
-                  
+                  // Agafar les dimensions de l'ordre
+                  // i modificar les propietats de l'escena
+                  try {
+                    escena.tamX = components[1].toInt()
+                    escena.tamY = components[2].toInt()
+                  } catch (e: java.lang.Exception) {
+                    // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+                    println(
+                      "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n dimensions x y\u001B[0m"
+                    )
+                  }
+                  break
                 }
-                
               }// When
             }
-            
-            
           } catch (e: Exception) {
             println("Excepció en la càrrega del fitxer: ")
             println(e)
           }
         }
         
-        // TODO
         "quit" -> {
           exitProcess(0)
         }

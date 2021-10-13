@@ -14,6 +14,16 @@ class Rectangle : Figura {
   // Constructors secundaris
   constructor() : super() //Sense arguments
   
+  constructor(width: Int, height: Int) : super() {
+    this.width = width
+    this.height = height
+  }
+  
+  constructor(x: Int, y: Int, width: Int, height: Int) : super(x, y) {
+    this.width = width
+    this.height = height
+  }
+  
   constructor(x: Int, y: Int, width: Int = 100, height: Int = 100, color: Color = Color.BLACK) : super(x, y, color) {
     this.width = width
     this.height = height
