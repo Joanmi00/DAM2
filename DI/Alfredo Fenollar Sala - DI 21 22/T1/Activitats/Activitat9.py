@@ -1,17 +1,11 @@
-import sys
-from os.path import dirname
-
-sys.path.append(dirname(__file__))
-
 # 9. Fes una aplicació que donada la següent llista,
 # imprimisca els seus membres: aficions = [‘esports’, ‘cine’, ‘teatre’]
-print()
-aficions = ['esports', 'cine', 'teatre']
 
-
-def imprimir_membres(*membres):
-	for membre in membres:
+def main():
+	aficions = ['esports', 'cine', 'teatre']
+	for membre in aficions:
 		print(membre)
 
 
-imprimir_membres(aficions)
+if __name__ == '__main__':
+	main()

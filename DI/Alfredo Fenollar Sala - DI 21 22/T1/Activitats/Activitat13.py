@@ -1,14 +1,13 @@
-import sys
-from os.path import dirname
+# 13. Anem a implementar un xicotet joc per consola. El programa generarà un número aleatori
+# entre 0 i 100 (utilitzeu randint() del mòdul random) i demanarà a l’usuari que introduïsca un número.
+# Mentre el número siga massa menut, llançarà una excepció ErrorEnterMassaMenut indicant-li-ho.
+# Si per contra és massa gran llançarà ErrorEnterMassaGran.
+# El joc acabarà quan s’introduïsca un valor no numèric o quan s’introduïsca l’enter buscat,
+# en este cas felicitarà a l’usuari.
 
-sys.path.append(dirname(__file__))
+def main():
+	print()
 
-# 8. Fes una aplicació que imprimisca els primers 100 números imparells.
-cont = 0
-"Primeros 100 numeros impares:"
-for i in range(250):
-	if (i % 2 == 1) & (cont <= 100):
-		cont = cont + 1
-		print(i)
-	elif cont > 100:
-		break
+
+if __name__ == '__main__':
+	main()
