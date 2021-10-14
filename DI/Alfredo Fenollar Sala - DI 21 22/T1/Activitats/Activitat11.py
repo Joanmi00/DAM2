@@ -6,11 +6,11 @@ import os
 
 def main():
 	ruta_base = os.path.dirname(__file__)
-	ruta_a_recurs_in = os.path.join(ruta_base, "operacions.txt")
-	ruta_a_recurs_out = os.path.join(ruta_base, "resultats.txt")
+	ruta_operacions = os.path.join(ruta_base, "operacions.txt")
+	ruta_resultats = os.path.join(ruta_base, "resultats.txt")
 	
-	with open(ruta_a_recurs_out, 'w', encoding='utf-8') as f_out:
-		with open(ruta_a_recurs_in, 'r', encoding='utf-8') as f_in:
+	with open(ruta_operacions, 'r', encoding='utf-8') as f_in:
+		with open(ruta_resultats, 'w', encoding='utf-8') as f_out:
 			for linia in f_in.read().splitlines():
 				parts = linia.split(" ")
 				if parts[1] == '+':
