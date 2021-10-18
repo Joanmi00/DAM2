@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DI-21-22-Alfredo-Fenollar-Sala" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/equalizer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/script clonar de git/DI-21-22-Alfredo-Fenollar-Sala" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/script clonar de git/equalizer" vcs="Git" />
   </component>
 </project>

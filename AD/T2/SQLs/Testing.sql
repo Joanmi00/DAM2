@@ -1,0 +1,5 @@
+USE BDJocs;
+
+SELECT * FROM Genere;
+
+SELECT * FROM Joc;

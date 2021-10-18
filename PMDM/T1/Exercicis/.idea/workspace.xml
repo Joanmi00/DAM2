@@ -5,6 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40d3e71f-7055-4aed-a3f4-b2808957bac9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/esquemaBDJocs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AD/T2/esquemaBDJocs.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/modules/paco.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/paco/src/main/java/DefaultPackage/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/modules/prueba3.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AD/T2/prueba3/src/main/java/DefaultPackage/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat10.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat8.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat8.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

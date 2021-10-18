@@ -1,6 +1,11 @@
 # 8. Fes una aplicació que imprimisca els primers 100 números imparells.
 
 def main():
+	for parells in range(1, 200, 2):
+		print(parells)
+
+
+def version_mala():
 	cont = 0
 	"Primeros 100 numeros impares:"
 	for i in range(250):

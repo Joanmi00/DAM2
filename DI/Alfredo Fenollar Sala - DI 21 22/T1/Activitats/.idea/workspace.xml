@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af6c01d4-0453-44cb-97ed-8ab48a886aad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Practica 1/pyGame/HelloWorld.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Activitat10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activitat11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activitat12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activitat13.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat13.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Activitat8.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activitat9.py" beforeDir="false" afterPath="$PROJECT_DIR$/Activitat9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f2887e50-934c-477c-9641-6f7f493e6678" />
+        <option name="url" value="https://github.com/Alfiefe10/DI-21-22-Alfredo-Fenollar-Sala.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectId" id="1zDhyaxH3y2X4x8i4HLcbekGpR8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="Python.Activitat12">
+  <component name="RunManager" selected="Python.Activitat10">
     <configuration name="Activitat10" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Exercicis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Activitat13" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Activitat8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Exercicis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,7 +118,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Activitat13.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Activitat8.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="excepcions_usuari" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Activitat9" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Exercicis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,7 +139,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/excepcions_usuari.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Activitat9.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,13 +148,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Activitat11" />
+      <item itemvalue="Python.Activitat12" />
+      <item itemvalue="Python.Activitat8" />
+      <item itemvalue="Python.Activitat9" />
+      <item itemvalue="Python.Activitat10" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Activitat10" />
+        <item itemvalue="Python.Activitat9" />
+        <item itemvalue="Python.Activitat8" />
         <item itemvalue="Python.Activitat12" />
         <item itemvalue="Python.Activitat11" />
-        <item itemvalue="Python.Activitat13" />
-        <item itemvalue="Python.excepcions_usuari" />
-        <item itemvalue="Python.Activitat10" />
       </list>
     </recent_temporary>
   </component>

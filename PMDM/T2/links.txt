@@ -1,0 +1,5 @@
+ Install Android Studio:
+ https://developer.android.com/studio/install
+
+Las librerías de compatibilidad (support library) de Android:
+https://www.youtube.com/watch?v=l4YlMowyw34

@@ -5,10 +5,10 @@ def main():
 	llista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	parells = list(filter(lambda x: x % 2 == 0, llista))
 	imparells = list(filter(lambda x: x % 2 == 1, llista))
-	print("parells:")
+	print("parells:", end=" ")
 	for i in parells:
 		print(i, end=" ")
-	print("\nimparells:")
+	print("\nimparells:", end=" ")
 	for i in imparells:
 		print(i, end=" ")
 
