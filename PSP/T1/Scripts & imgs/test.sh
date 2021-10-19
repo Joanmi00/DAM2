@@ -3,15 +3,15 @@
 # amb pauses d'un segon
 
 compta(){
-for i in {0..5}; do
-echo $i
-sleep 1
-done
+    for i in {0..5}; do
+        echo $i
+        sleep 1
+    done
 }
 
 # Escrivim els següents missatges quan es reben les senyals 15 i 9
 trap 'echo capturant SIGKILL?' 9    # Compte, podem fer el
-                                    # procés "indestructible"!
+# procés "indestructible"!
 trap 'echo capturant SIGTERM' 15
 
 # Ignorem la interrupció 2 (SIGINT), mentre
@@ -25,7 +25,7 @@ trap 'capturadora' 2
 echo "Capturant SIGINT"
 
 capturadora(){
-echo "Has polsat Ctrl+C. Espera un moment."
+    echo "Has polsat Ctrl+C. Espera un moment."
 }
 
 compta
