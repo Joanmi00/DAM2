@@ -6,7 +6,7 @@ public class Main {
 public static int MAX_FILES_BY_COLUMN = 5;
 
 public static void main(String[] args) {
-  String[] nombresArchivos = {"PepeAndres.txt", "Elcapo.txt", "Nano.txt", "Tete.txt", "Pipontiac.txt", "Potilinsoa.txt"};
+  String[] nombresArchivos = {"Elcapo.txt", "Nano.txt", "PepeAndres.txt", "Pipontiac.txt", "Potilinsoa.txt", "Tete.txt"};
   
   listarLista(nombresArchivos);
   System.out.println();

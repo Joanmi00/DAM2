@@ -1,6 +1,5 @@
 package com.ieseljust.ad.figures;
 
-
 import javafx.scene.canvas.GraphicsContext;
 
 import java.io.Serializable;
@@ -12,7 +11,6 @@ import java.util.List;
  * podem modificar i consultar (ens farà falta en algun moment), i una
  * llista de figures, que haurem de recórrer per tal de guardar-la en disc.
  */
-
 class Escena implements Serializable {
 //Les figures de l'escena s'emmagatzemen en una llista
 List<Figura> LlistaFigures;
@@ -24,7 +22,6 @@ private int tamY;
 // Aquest objecte ens servirà per validar els colors
 // en format hexadecimal (Ex: #000000)
 
-
 Escena() {
   // Constructor. Pr defecte creem un tamany de 800x600;
   this.tamX = 800;
@@ -32,14 +29,11 @@ Escena() {
   
   // Inicialitzem la llista de figures
   LlistaFigures = new ArrayList<>();
-  
 }
 
 Escena(int x, int y) {
-  
   // Constructor (sobrecarregat), quan se'ns indica
   // un tamany per al marc.
-  
   this.tamX = x;
   this.tamY = y;
   
@@ -66,7 +60,6 @@ int getY() {
 public Boolean esBuida() {
   return this.LlistaFigures.isEmpty();
 }
-
 
 public void add(Figura figura) {
         /*  
@@ -96,7 +89,6 @@ public void add(Figura figura) {
   }
 }
 
-
 public void renderText() {
   /* Mostra la llista de figures i les seues propietats */
   
@@ -124,7 +116,5 @@ public void renderScene(GraphicsContext gc) {
   
   
 }
-
-
 }
 

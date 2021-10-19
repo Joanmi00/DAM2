@@ -1,9 +1,9 @@
-# Import the pygame module
-import pygame
-# Import random for random numbers
-import random
-
 if __name__ == '__main__':
+    # Import the pygame module
+    import pygame
+    # Import random for random numbers
+    import random
+
     # Import pygame.locals for easier access to key coordinates
     # Updated to conform to flake8 and black standards
     from pygame.locals import (
@@ -15,10 +15,6 @@ if __name__ == '__main__':
         KEYDOWN,
         QUIT
     )
-
-    # Define constants for the screen width and height
-    SCREEN_WIDTH = 800
-    SCREEN_HEIGHT = 600
 
     # Define a Player object by extending pygame.sprite.Sprite
     # The surface drawn on the screen is now an attribute of 'player'
@@ -77,6 +73,13 @@ if __name__ == '__main__':
     # Initialize pygame
     pygame.init()
 
+    # Setup the clock for a decent framerate
+    clock = pygame.time.Clock()
+
+    # Define constants for the screen width and height
+    SCREEN_WIDTH = 1920
+    SCREEN_HEIGHT = 1080
+
     # Create the screen object
     # The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -117,15 +120,12 @@ if __name__ == '__main__':
                 enemies.add(new_enemy)
                 all_sprites.add(new_enemy)
 
-            # Get the set of keys pressed and check for user input
-            pressed_keys = pygame.key.get_pressed()
-            player.update(pressed_keys)
-
-            # Update enemy position
-            enemies.update()
-
         # Get the set of keys pressed and check for user input
         pressed_keys = pygame.key.get_pressed()
+        player.update(pressed_keys)
+
+        # Update enemy position
+        enemies.update()
 
         # Update the player sprite based on user keypresses
         player.update(pressed_keys)
@@ -137,5 +137,14 @@ if __name__ == '__main__':
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)
 
+        # Check if any enemies have collided with the player
+        if pygame.sprite.spritecollideany(player, enemies):
+            # If so, then remove the player and stop the loop
+            player.kill()
+            running = False
+
         # Update the display
         pygame.display.flip()
+
+        # Ensure program maintains a rate of 30 frames per second
+        clock.tick(30)

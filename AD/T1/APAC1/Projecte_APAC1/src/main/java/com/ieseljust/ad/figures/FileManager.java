@@ -3,6 +3,11 @@ package com.ieseljust.ad.figures;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * FileManager.java: Classe que s’encarregarà de le gestió de l’emmagatzemament.
  * Serà el que haurem d’implementar, i per això li dedicarem un apartat.
@@ -26,45 +31,41 @@ private boolean validaInt(String s) {
 }
 
 public Boolean Exists(String file) {
-  /**
-   * **************************************
-   * TODO: Mètode a implementar: * Retorna si el fitxer existeix o no *
-   * ***************************************
-   */
-  
-  // Comentar o elimina aquestes línies quan implementeu el mètode
-  return false;
-  
+  return new File(file).exists();
 }
 
 public Escena importFromText(String file) {
+  // dimensions 500 500
+  // rectangle 10 10 480 480 #ccccee
+  // cercle 250 250 100 #aaaaaa
   
-  /**
-   * *********************************************************
-   * TODO: Mètode a implementar: * Llegirà el fitxer indicat, en format
-   * text, i importarà * la llista de figures. *
-   * **********************************************************
-   */
-  
-  /*
-      dimensions 500 500
-      rectangle 10 10 480 480 #ccccee
-      cercle 250 250 100 #aaaaaa
-   */
   Escena escena = null;
-  
+  if (Exists(file)) {
+    try {
+      escena = new Escena();
+      FileReader fr = new FileReader(file);
+      BufferedReader bfr = new BufferedReader(fr);
+      
+      while (bfr.ready()) {
+        // TODO: Mètode a implementar: Llegirà el fitxer indicat, en format text, i importarà la llista de figures.
+        String linea = bfr.readLine();
+        String[] items = linea.split(" ");
+        switch (items[0]) {
+          // SWITCH
+        }
+      }
+      fr.close();
+      bfr.close();
+    } catch (IOException e) {
+      System.out.println("Error llegint arxiu de text");
+    }
+  }
   return escena;
-  
 }
 
 public Escena importFromObj(String file) {
+  // TODO: Mètode a implementar: * Llegirà el fitxer indicat, en format d'objectes seriats, i importa la llista de figures.
   
-  /**
-   * **********************************************************************
-   * TODO: Mètode a implementar: * Llegirà el fitxer indicat, en format
-   * d'objectes seriats, i importa * la llista de figures. *
-   * **********************************************************************
-   */
   // Comentar o elimina aquestes línies quan implementeu el mètode
   Escena escena = null;
   

@@ -33,8 +33,6 @@ static Stage primaryStage;
 static Escena AppEscena;
 
 public static void main(String[] args) {
-  
-  
   Scanner keyboard = new Scanner(System.in);
   
   // FileManager serà el gestor d'emmagatzemamanet
@@ -60,7 +58,6 @@ public static void main(String[] args) {
   String figura;
   
   do {
-    
     // Preguntem la següent figura a emmagatzemar
     System.out.print(Colors.Blue + "# Figura: " + Colors.Reset);
     String ordre = keyboard.nextLine();

@@ -5,135 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="688a6bb0-4d6c-49d1-8086-a1410326bf0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../T2/SQLProject/src/main/java/com/ieseljust/ad/BDJugadors/consultarJocs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../T2/SQLProject/src/main/java/com/ieseljust/ad/BDJugadors/inserirJocs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original 2021-22.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/modules/2020_AD_APAC1.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/ADroid.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/ADroid.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/ADroid.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/MyDroid.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Cercle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Colors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Escena.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Figura.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/FileManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/HexColorValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Linia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Punt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/bin/main/com/ieseljust/ad/figures/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/draw.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/fig.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/pajarito.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/pajarito.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Cercle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Colors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Escena.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Figura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/FileManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/HexColorValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Linia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Punt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/src/main/java/com/ieseljust/ad/figures/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/tie.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../APAC1_Original/tie.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/SQLProject/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../T2/SQLProject/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/esquemaBDJocs.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/7.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/modules/paco.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/paco/src/main/java/DefaultPackage/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/7.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/modules/prueba3.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../T2/prueba3/src/main/java/DefaultPackage/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat10.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat8.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Activitats/Activitat8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../EIE/T1/Repaso plan de empresa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../EIE/T1/Repaso plan de empresa.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PMDM/T1/Exercicis/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PMDM/T1/Exercicis/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PMDM/T1/Exercicis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PMDM/T1/Exercicis/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercicis/.idea/Exercicis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exercicis/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Escena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Escena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/HexColorValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/HexColorValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/Alumne.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/Alumne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/ExampleFitxers.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/ExampleFitxers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/io/Utilidades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/build/classes/java/main/Prac2Exer1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/build/classes/java/main/Prac2Exer1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exercicis/src/main/java/Prac2Exer1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/src/main/java/Prac2Exer1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Practica 1/pyGame/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Practica 1/pyGame/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +86,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Gradle.Projecte_APAC1 [run]">
     <configuration name="APAC1_Original [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
