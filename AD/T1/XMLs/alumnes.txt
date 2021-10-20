@@ -1,0 +1,5 @@
+Maria Sanchez,22,DAM,7.23
+Josep Garcia,18,ASIX,5.12
+Angela Veron,20,DAW,7.12
+Silvia Climent,24,DAM,5.05
+Jordi Costa,22,DAW,9.45

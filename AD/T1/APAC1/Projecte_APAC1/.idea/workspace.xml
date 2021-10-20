@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="688a6bb0-4d6c-49d1-8086-a1410326bf0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Exercicis/.idea/Exercicis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exercicis/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Escena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Escena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/HexColorValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/HexColorValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/Alumne.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/Alumne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/ExampleFitxers.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/bin/main/Default/ExampleFitxers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/bin/main/io/Utilidades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/build/classes/java/main/Prac2Exer1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/build/classes/java/main/Prac2Exer1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Exercicis/src/main/java/Prac2Exer1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exercicis/src/main/java/Prac2Exer1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Practica 1/pyGame/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../DI/Alfredo Fenollar Sala - DI 21 22/T1/Practica 1/pyGame/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Examples/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../XMLs/XML.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Actividades T1 PSP - Alfredo Fenollar Sala.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Actividades T1 PSP - Alfredo Fenollar Sala.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Exercicis T1 PSP" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Exercicis T1 PSP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/arxiu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/arxiu.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

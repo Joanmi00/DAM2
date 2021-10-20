@@ -1,4 +1,4 @@
-- Crear un script kien bash que ejecute firefox (u otra aplicación), espere 15 segundos y nos muestre todos los PID de firefox. A continuación mediante alguna herramienta de procesos, que nos muestre dichos procesos, mostrando el usuario que ha lanzado el proceso y la ruta completa del mismo. Debemos comprobar que los PID coinciden. ¿Cual es el PPID de los procesos hijo en este caso? ¿cómo mataríamos todos los procesos firefox? ¿y en el caso que no se cierre, que otra opción tenemos?
+- Crear un script en bash que ejecute firefox (u otra aplicación), espere 15 segundos y nos muestre todos los PID de firefox. A continuación mediante alguna herramienta de procesos, que nos muestre dichos procesos, mostrando el usuario que ha lanzado el proceso y la ruta completa del mismo. Debemos comprobar que los PID coinciden. ¿Cual es el PPID de los procesos hijo en este caso? ¿cómo mataríamos todos los procesos firefox? ¿y en el caso que no se cierre, que otra opción tenemos?
 
 - Comprobar si tenemos el servicio ssh instalado y en que estado se encuentra. ¿Cómo parariamos el servicio? ¿y cómo lo reiniciariamos?
 
