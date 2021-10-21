@@ -4,7 +4,13 @@ package com.ieseljust.ad.figures;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -54,5 +60,59 @@ public void render(GraphicsContext gc) {
   gc.fillOval(this.posicio.getX(), this.posicio.getY(), this.radi * 2, this.radi * 2);
 }
 
+@Override
+public void getAsText(Figura f, String nom) {
+  FileWriter fw = null;
+  BufferedWriter bw = null;
+  try {
+    fw = new FileWriter(nom, true);
+    bw = new BufferedWriter(fw);
+    bw.write("cercle " + (f.posicio.getX() + this.radi) + " " + (f.posicio.getY() + this.radi) + " " + this.radi
+             + " " + f.color);
+    bw.newLine();
+    
+  } catch (IOException ex) {
+  } finally {
+    try {
+      bw.close();
+      fw.close();
+    } catch (Exception e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
+  }
+}
 
+@Override
+public Element getAsXml(Figura f, Document doc) {
+  Element nuevocer = doc.createElement("circle");
+  nuevocer.setAttribute("cx", String.valueOf(f.posicio.getX() + this.radi));
+  nuevocer.setAttribute("cy", String.valueOf(f.posicio.getY() + this.radi));
+  nuevocer.setAttribute("fill", this.color);
+  nuevocer.setAttribute("r", String.valueOf(this.getRadi()));
+  
+  return nuevocer;
+}
+
+@Override
+public JSONObject getAsJson() {
+  JSONObject figura = new JSONObject();
+  figura.put("x", this.posicio.getX());
+  figura.put("y", this.posicio.getY());
+  figura.put("r", this.getRadi());
+  figura.put("fill", this.color);
+  
+  JSONObject cercle = new JSONObject();
+  cercle.put("cercle", figura);
+  return cercle;
+}
+
+public Integer getRadi() {
+  return radi;
+}
+
+public void setRadi(Integer radi) {
+  this.radi = radi;
+}
 }

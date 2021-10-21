@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <!DOCTYPE curs [
-    <!ELEMENT curs (modul)*>
-    <!ELEMENT modul (nom|hores|qualificacio)*>
-    <!ELEMENT nom (#PCDATA)>
-    <!ELEMENT hores (#PCDATA)>
-    <!ELEMENT qualificacio (#PCDATA)>
-    ]>
+        <!ELEMENT curs (modul)*>
+        <!ELEMENT modul (nom|hores|qualificacio)*>
+        <!ELEMENT nom (#PCDATA)>
+        <!ELEMENT hores (#PCDATA)>
+        <!ELEMENT qualificacio (#PCDATA)>
+        ]>
 
 <curs>
-  <modul>
-    <nom>Accés a Dades</nom>
-    <hores>6</hores>
-    <qualificacio>8.45</qualificacio>
-  </modul>
-  <modul>
-    <nom>Programació de serveis i processos</nom>
-    <hores>3</hores>
-    <qualificacio>9.0</qualificacio>
-  </modul>
-  <modul>
-    <nom>Desenvolupament d'interfícies</nom>
-    <hores>6</hores>
-    <qualificacio>8.0</qualificacio>
-  </modul>
-  <modul>
-    <nom>Programació Multimèdia i dispositiud mòbils</nom>
-    <hores>5</hores>
-    <qualificacio>7.34</qualificacio>
-  </modul>
-  <modul>
-    <nom>Sistemes de Gestió Empresarial</nom>
-    <hores>5</hores>
-    <qualificacio>8.2</qualificacio>
-  </modul>
-  <modul>
-    <nom>Empresa i iniciativa emprenedora</nom>
-    <hores>3</hores>
-    <qualificacio>7.4</qualificacio>
-  </modul>
+    <modul>
+        <nom>Accés a Dades</nom>
+        <hores>6</hores>
+        <qualificacio>8.45</qualificacio>
+    </modul>
+    <modul>
+        <nom>Programació de serveis i processos</nom>
+        <hores>3</hores>
+        <qualificacio>9.0</qualificacio>
+    </modul>
+    <modul>
+        <nom>Desenvolupament d'interfícies</nom>
+        <hores>6</hores>
+        <qualificacio>8.0</qualificacio>
+    </modul>
+    <modul>
+        <nom>Programació Multimèdia i dispositiud mòbils</nom>
+        <hores>5</hores>
+        <qualificacio>7.34</qualificacio>
+    </modul>
+    <modul>
+        <nom>Sistemes de Gestió Empresarial</nom>
+        <hores>5</hores>
+        <qualificacio>8.2</qualificacio>
+    </modul>
+    <modul>
+        <nom>Empresa i iniciativa emprenedora</nom>
+        <hores>3</hores>
+        <qualificacio>7.4</qualificacio>
+    </modul>
 </curs>
-    
-    <!--
-    <curs>
-    <modul nom="Accés a Dades" hores="6" qualificacio="8.45" >
-    <modul nom="Programació de serveis i processos" "hores"=3 qualificacio="9.0" >
-    <modul nom ="Desenvolupament d'interfícies" hores="6" qualificacio="8.0" >
-    </modul>
-    <modul nom="Programació Multimèdia i dispositiud mòbils" hores="5" qualificacio="7,34">
-      <modul nom="Sistemes de Gestió Empresarial" hores="5" "qualificacio"=8.2 />
-      <modul nom="Empresa i iniciativa emprenedora"  hores="3" qualificacio="7.4" />
-    </modul>
-    </curs>
-    -->
+        
+        <!--
+        <curs>
+        <modul nom="Accés a Dades" hores="6" qualificacio="8.45" >
+        <modul nom="Programació de serveis i processos" "hores"=3 qualificacio="9.0" >
+        <modul nom ="Desenvolupament d'interfícies" hores="6" qualificacio="8.0" >
+        </modul>
+        <modul nom="Programació Multimèdia i dispositiud mòbils" hores="5" qualificacio="7,34">
+          <modul nom="Sistemes de Gestió Empresarial" hores="5" "qualificacio"=8.2 />
+          <modul nom="Empresa i iniciativa emprenedora"  hores="3" qualificacio="7.4" />
+        </modul>
+        </curs>
+        -->

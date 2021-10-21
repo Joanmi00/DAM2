@@ -55,12 +55,7 @@ public static ArrayList<Alumne> llegirFitxer(String nomFitxer) {
       String[] items = linea.split(",");
       // [Maria Sanchez|22|DAM|7.23]
       
-      Alumne a = new Alumne(
-      items[0],
-      Integer.parseInt(items[1]),
-      items[2],
-      Double.parseDouble(items[3])
-      );
+      //Alumne a = new Alumne(items[0],Integer.parseInt(items[1]),items[2],Double.parseDouble(items[3]));
       
       elsAlumnes.add(a);
       
@@ -92,17 +87,13 @@ public static void guardarFicheroBinario(ArrayList<Alumne> elsAlumnes, String no
     
     
     for (Alumne alumne : elsAlumnes) {
-      
-      dos.writeUTF(alumne.getNom());
-      dos.writeInt(alumne.getEdat());
-      dos.writeUTF(alumne.getCicle());
-      dos.writeDouble(alumne.getNota_m());
-      
+      //dos.writeUTF(alumne.getNom());
+      //dos.writeInt(alumne.getEdat());
+      //dos.writeUTF(alumne.getCicle());
+      //dos.writeDouble(alumne.getNota_m());
     }
     
     dos.close();
-    
-    
   } catch (FileNotFoundException ex) {
     System.out.println(ex.getMessage());
   } catch (IOException ex) {
@@ -114,7 +105,6 @@ public static void guardarFicheroBinario(ArrayList<Alumne> elsAlumnes, String no
       System.out.println(ex.getMessage());
     }
   }
-  
 }
 
 

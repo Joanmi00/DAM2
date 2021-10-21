@@ -81,8 +81,6 @@ public static void main(String[] args) {
           Cercle nouCercle = new Cercle(x, y, radi, color);
           // I l'afegim a la llista
           AppEscena.add(nouCercle);
-          
-          
         } catch (Exception e) {
           // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
           System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\ncercle x y radi color \u001B[0m");
@@ -103,8 +101,6 @@ public static void main(String[] args) {
           Rectangle nouRectangle = new Rectangle(x, y, llarg, alt, color);
           // I l'afegim a la llista
           AppEscena.add(nouRectangle);
-          
-          
         } catch (Exception e) {
           // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
           System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\nrectangle x y llargària altura color \u001B[0m");
@@ -125,8 +121,6 @@ public static void main(String[] args) {
           Linia liniaNova = new Linia(x, y, x2, y2, color);
           // I l'afegim a la llista
           AppEscena.add(liniaNova);
-          
-          
         } catch (Exception e) {
           // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
           System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\nlinia x y x2 y2 color \u001B[0m");
@@ -144,7 +138,6 @@ public static void main(String[] args) {
         } catch (Exception e) {
           System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\ndimensions x y \u001B[0m");
         }
-        
         break;
       
       case "import":
@@ -161,7 +154,6 @@ public static void main(String[] args) {
           
           String extensio = components[1].substring(components[1].length() - 4, components[1].length());
           
-          
           switch (extensio) {
             case ".txt": {
               Escena novaEscena = fm.importFromText(components[1]);
@@ -174,18 +166,14 @@ public static void main(String[] args) {
               // Si torna algun resultat, l'escena canvia per la nova
               if (!novaEscena.esBuida()) AppEscena = novaEscena;
             }
-            
             break;
             
             default:
               System.out.println("Format no reconegut..");
               break;
-            
           }
           AppEscena.renderText();
-          
         }
-        
         break;
       
       case "export":
@@ -198,7 +186,6 @@ public static void main(String[] args) {
             // Si el fitxer ja existeix, eixim de l'exportació mostrant un error
             System.out.println("\u001B[31m El fitxer ja existeix\u001B[0m");
             break;
-            
           }
           
           switch (extensio) {
@@ -233,13 +220,10 @@ public static void main(String[] args) {
             default:
               System.out.println("\u001B[31m Format no suportat\u001B[0m");
               break;
-            
           }
-          
         } catch (Exception e) {
           System.out.println("\u001B[31m Error d'exportació\u001B[0m");
         }
-        
         break;
       
       case "llista":
@@ -254,18 +238,16 @@ public static void main(String[] args) {
         // qui s'encarregarà de dibuixar la nostra escena.
         launch(args);
         System.exit(0);
-        
         break;
       
       case "quit":
         System.out.println(Colors.Magenta + "Acabant el programa." + Colors.Reset);
         break;
+      
       default:
         // Si hem arribat aci, l'ordre no es coneix
         System.out.println(Colors.Bright_Red + "Figura no reconeguda" + Colors.Reset);
     }
-    
-    
   } while (!figura.equals("quit"));
   System.exit(0);
 }

@@ -1,12 +1,20 @@
 package com.ieseljust.ad.figures;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.*;
+import java.util.List;
 
 /**
  * FileManager.java: Classe que s’encarregarà de le gestió de l’emmagatzemament.
@@ -34,83 +42,194 @@ public Boolean Exists(String file) {
   return new File(file).exists();
 }
 
+public Boolean exportText(Escena escena, String file) {
+  boolean out = false;
+  FileWriter fw = null;
+  try {
+    // Usamos archivo.txt
+    fw = new FileWriter(file, true);
+    BufferedWriter bw = new BufferedWriter(fw);
+    
+    bw.write("dimensions " + escena.getX() + " " + escena.getY());
+    bw.newLine();
+    
+    List<Figura> figuras = escena.LlistaFigures;
+    for (Figura fig : figuras) {
+      fig.getAsText(fig, file);
+    }
+    
+    out = true;
+  } catch (IOException e) {
+    e.printStackTrace();
+  } finally {
+    try {
+      fw.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  return out;
+}
+
 public Escena importFromText(String file) {
   // dimensions 500 500
   // rectangle 10 10 480 480 #ccccee
   // cercle 250 250 100 #aaaaaa
-  
   Escena escena = null;
-  if (Exists(file)) {
-    try {
-      escena = new Escena();
-      FileReader fr = new FileReader(file);
-      BufferedReader bfr = new BufferedReader(fr);
-      
-      while (bfr.ready()) {
-        // TODO: Mètode a implementar: Llegirà el fitxer indicat, en format text, i importarà la llista de figures.
-        String linea = bfr.readLine();
-        String[] items = linea.split(" ");
-        switch (items[0]) {
-          // SWITCH
-        }
+  FileReader fr = null;
+  BufferedReader br = null;
+  try {
+    File f = new File(file);
+    fr = new FileReader(f);
+    br = new BufferedReader(fr);
+    escena = new Escena();
+    
+    while (br.ready()) {
+      String[] components = br.readLine().split(" ");
+      switch (components[0]) {
+        case "cercle":
+          // Creació d'una figura de la classe cercle
+          try {
+            // Extraiem les dimensions
+            int x = Integer.parseInt((components[1]));
+            int y = Integer.parseInt((components[2]));
+            int radi = Integer.parseInt((components[3]));
+            String color = components[4];
+            
+            // Si tot és correcte creem la figura cercle
+            Cercle nouCercle = new Cercle(x, y, radi, color);
+            // I l'afegim a la llista
+            escena.add(nouCercle);
+          } catch (Exception e) {
+            // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+            System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\ncercle x y radi color \u001B[0m");
+          }
+          break;
+        
+        case "rectangle":
+          // Creació d'una figura de la classe rectangle
+          try {
+            // Extraiem les dimensions
+            int x = Integer.parseInt((components[1]));
+            int y = Integer.parseInt((components[2]));
+            int llarg = Integer.parseInt((components[3]));
+            int alt = Integer.parseInt((components[4]));
+            String color = components[5];
+            
+            // Si tot és correcte creem la figura rectangle
+            Rectangle nouRectangle = new Rectangle(x, y, llarg, alt, color);
+            // I l'afegim a la llista
+            escena.add(nouRectangle);
+          } catch (Exception e) {
+            // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+            System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\nrectangle x y llargària altura color \u001B[0m");
+          }
+          break;
+        
+        case "linia":
+          // Creació d'una figura de la classe rectangle
+          try {
+            // Extraiem les dimensions
+            int x = Integer.parseInt((components[1]));
+            int y = Integer.parseInt((components[2]));
+            int x2 = Integer.parseInt((components[3]));
+            int y2 = Integer.parseInt((components[4]));
+            String color = components[5];
+            
+            // Si tot és correcte creem la figura linia
+            Linia liniaNova = new Linia(x, y, x2, y2, color);
+            // I l'afegim a la llista
+            escena.add(liniaNova);
+          } catch (Exception e) {
+            // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+            System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\nlinia x y x2 y2 color \u001B[0m");
+            //System.out.println(e);
+          }
+          break;
+        
+        case "dimensions":
+          // Redimensiona el marc de la imatge
+          try {
+            int x = Integer.parseInt((components[1]));
+            int y = Integer.parseInt((components[2]));
+            escena.dimensions(x, y);
+            System.out.println("\u001B[32m OK \u001B[0m");
+          } catch (Exception e) {
+            System.out.println("\u001B[31m Error de sintaxi. La sintaxi correcta és:\ndimensions x y \u001B[0m");
+          }
+          break;
       }
+    }
+  } catch (IOException e) {
+    System.out.println("Error llegint arxiu de text");
+  } finally {
+    try {
       fr.close();
-      bfr.close();
+      br.close();
     } catch (IOException e) {
-      System.out.println("Error llegint arxiu de text");
+      e.printStackTrace();
     }
   }
-  return escena;
-}
-
-public Escena importFromObj(String file) {
-  // TODO: Mètode a implementar: * Llegirà el fitxer indicat, en format d'objectes seriats, i importa la llista de figures.
-  
-  // Comentar o elimina aquestes línies quan implementeu el mètode
-  Escena escena = null;
   
   return escena;
-  
-}
-
-public Boolean exportText(Escena escena, String file) {
-  
-  /**
-   * ************************************************
-   * TODO: Mètode a implementar: * exporta l'escena donada a un fitxer de
-   * text, * en format per poder ser importat posteriorment.*
-   * ************************************************
-   */
-  // Comentar o elimina aquestes línies quan implementeu el mètode
-  boolean out = false;
-  
-  return out;
-  
 }
 
 public Boolean exportObj(Escena escena, String file) {
-  
-  /**
-   * **********************************************************
-   * TODO: Mètode a implementar: * exporta l'escena donada a un fitxer
-   * binari d'objectes, * per poder ser importat posteriorment. *
-   * **********************************************************
-   */
-  // Comentar o elimina aquestes línies quan implementeu el mètode
   boolean out = false;
+  FileOutputStream fos = null;
+  ObjectOutputStream oos = null;
+  try {
+    File f = new File(file);
+    fos = new FileOutputStream(f, true);
+    oos = new ObjectOutputStream(fos);
+    
+    oos.writeObject(escena.getX());
+    oos.writeObject(escena.getY());
+    for (Figura fig : escena.LlistaFigures) {
+      oos.writeObject(fig);
+    }
+    
+    out = true;
+  } catch (IOException e) {
+    e.printStackTrace();
+  } finally {
+    try {
+      fos.close();
+      oos.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
   
   return out;
+}
+
+public Escena importFromObj(String file) {
+  Escena escena = null;
+  try {
+    File f = new File(file);
+    FileInputStream fis = new FileInputStream(f);
+    ObjectInputStream ois = new ObjectInputStream(fis);
+    
+    int x = (Integer) ois.readObject();
+    int y = (Integer) ois.readObject();
+    escena.dimensions(x, y);
+    while (fis.available() > 0) {
+      Figura f3 = (Figura) ois.readObject();
+      escena.add(f3);
+    }
+    
+    fis.close();
+    ois.close();
+  } catch (IOException | ClassNotFoundException e) {
+    e.printStackTrace();
+  }
   
+  return escena;
 }
 
 public Boolean exportSVG(Escena escena, String file) {
-  /**
-   * **********************************************************
-   * TODO: Mètode a implementar: * exporta l'escena donada a un fitxer
-   * SVG (format XML). * El fitxer s'haurà de poder obrir amb Inkscape. *
-   * **********************************************************
-   */
-  
   /*
       <?xmlversion="1.0"encoding="UTF-8"standalone="no"?> 2 <svgheight="500"width="500">
       <rect fill="#ccccee" height="480" width="480" x="10" y="10"/>
@@ -121,28 +240,57 @@ public Boolean exportSVG(Escena escena, String file) {
       <line stroke="#aaaaaa" stroke-width="3" x1="450" x2="450" y1="40" y2= "450"/>
       </svg>
    */
-  
-  // Comentar o elimina aquestes línies quan implementeu el mètode
   boolean out = false;
   
-  return out;
+  try {
+    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+    Element arrel = doc.createElement("svg");
+    
+    arrel.setAttribute("height", String.valueOf(escena.getX()));
+    arrel.setAttribute("width", String.valueOf(escena.getY()));
+    doc.appendChild(arrel);
+    
+    for (Figura f : escena.LlistaFigures) {
+      arrel.appendChild(f.getAsXml(f, doc));
+    }
+    
+    Transformer trans = TransformerFactory.newInstance().newTransformer();
+    DOMSource source = new DOMSource(doc);
+    StreamResult result = new StreamResult(new FileOutputStream(file));
+    trans.transform(source, result);
+    
+    out = true;
+  } catch (ParserConfigurationException | FileNotFoundException | TransformerException e) {
+    e.printStackTrace();
+  }
   
+  return out;
 }
 
 public Boolean exportJSON(Escena escena, String filename) {
-  
-  /**
-   * **********************************************
-   * TODO: Mètode a implementar: * exporta l'escena donada a un fitxer
-   * JSON. * **********************************************
-   */
-  // Comentar o elimina aquestes línies quan implementeu el mètode
   boolean out = false;
   
-  JSONObject escenajson = new JSONObject();
-  escenajson.put("width", escena.getX());
-  escenajson.put("height", escena.getY());
-  JSONArray lesfigures = new JSONArray();
+  try {
+    FileWriter file = new FileWriter(filename);
+    
+    JSONObject escenajson = new JSONObject();
+    escenajson.put("width", escena.getX());
+    escenajson.put("height", escena.getY());
+    JSONArray lesfigures = new JSONArray();
+    
+    escena.LlistaFigures.forEach(m -> lesfigures.put(m.getAsJson()));
+    escenajson.put("figuras", lesfigures);
+    
+    JSONObject arrel = new JSONObject();
+    
+    arrel.put("escena", escenajson);
+    
+    file.write(arrel.toString(4)); // 4 són els espais d'indentació
+    file.close();
+    out = true;
+  } catch (JSONException | IOException ex) {
+    ex.printStackTrace();
+  }
   
   return out;
 }

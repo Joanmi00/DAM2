@@ -3,6 +3,9 @@ package com.ieseljust.ad.figures;
 // Llibreríes per a poder dibuixar 
 
 import javafx.scene.canvas.GraphicsContext;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  * Figura.java: Es tracta de la superclasse a partir de la qual
@@ -52,4 +55,9 @@ public abstract void renderText(); // Per mostrar una descripció de la figura g
 
 public abstract void render(GraphicsContext gc); // Per dibuixar la figura al context gràfic especificat
 
+public abstract void getAsText(Figura f, String nom);
+
+public abstract Element getAsXml(Figura f, Document doc);
+
+public abstract JSONObject getAsJson();
 }

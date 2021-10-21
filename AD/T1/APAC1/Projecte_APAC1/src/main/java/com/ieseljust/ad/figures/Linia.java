@@ -4,6 +4,13 @@ package com.ieseljust.ad.figures;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Linia.java: Especialització de figura que dibuixa una línia de
@@ -49,4 +56,54 @@ public void render(GraphicsContext gc) {
   
 }
 
+@Override
+public void getAsText(Figura f, String nom) {
+  FileWriter fw = null;
+  BufferedWriter bw = null;
+  try {
+    fw = new FileWriter(nom, true);
+    bw = new BufferedWriter(fw);
+    bw.write("linia " + this.posicio.getX() + " " + this.posicio.getY() + " " + this.vector.getX() + " "
+             + this.vector.getY() + " " + f.color);
+    bw.newLine();
+  } catch (IOException ex) {
+  } finally {
+    try {
+      bw.close();
+      fw.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+
+@Override
+public Element getAsXml(Figura f, Document doc) {
+  Element nuevolin = doc.createElement("line");
+  nuevolin.setAttribute("stroke", this.color);
+  nuevolin.setAttribute("stroke-width", "3");
+  nuevolin.setAttribute("x1", String.valueOf(f.posicio.getX()));
+  nuevolin.setAttribute("y1", String.valueOf(f.posicio.getY()));
+  nuevolin.setAttribute("x2", String.valueOf(this.vector.getX()));
+  nuevolin.setAttribute("y2", String.valueOf(this.vector.getY()));
+  
+  return nuevolin;
+}
+
+@Override
+public JSONObject getAsJson() {
+  JSONObject figura = new JSONObject();
+  
+  figura.put("x", this.posicio.getX());
+  figura.put("y", this.posicio.getY());
+  figura.put("x2", this.vector.getX());
+  figura.put("y2", this.vector.getY());
+  figura.put("stroke-width", 3);
+  figura.put("stroke", this.color);
+  
+  JSONObject linia = new JSONObject();
+  linia.put("linia", figura);
+  
+  return linia;
+}
 }
