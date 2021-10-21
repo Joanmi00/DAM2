@@ -5,10 +5,14 @@ services:
     restart: always
     ports:
     - "8069:8069"
+    - "2222:22"
     links:
     - db
     volumes:
     - ./extra-addons:/mnt/extra-addons
+    #environment:
+    #- ODOO_USER=odoo
+    #- ODOO_PASSWORD=odoo
   db:
     image: postgres:12
     restart: always

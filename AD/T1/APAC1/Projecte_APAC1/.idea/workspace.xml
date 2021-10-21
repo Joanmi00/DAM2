@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="688a6bb0-4d6c-49d1-8086-a1410326bf0a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Examples/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../XMLs/XML.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Actividades T1 PSP - Alfredo Fenollar Sala.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Actividades T1 PSP - Alfredo Fenollar Sala.odt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Exercicis T1 PSP" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/Exercicis T1 PSP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/arxiu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../PSP/T1/Exercicis/arxiu.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SGE/T2/Docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
