@@ -21,7 +21,8 @@ public Circuit(String name, Location loc, String url) {
 
 public Circuit(JSONObject circuit) {
   this.name = circuit.getString("circuitName");
-  this.loc = new Location((JSONObject) circuit.get("Location"));
+  this.loc = new Location(circuit.getJSONObject("Location"));
+  //this.loc = new Location((JSONObject) circuit.get("Location"));
   this.url = circuit.getString("url");
 }
 

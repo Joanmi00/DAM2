@@ -77,6 +77,9 @@ public ResultadoCarrera(Element result) {
 }
 
 public String toCSV() {
+//  String res = "";
+//  res += this.;
+  
   return this.d + ";" + this.constructor + ";" + this.initialPos + ";" + this.finalPos + ";" + this.timeMillis
          + ";" + this.completedLaps + ";" + this.rankFastesLap + ";" + this.finisher;
 }

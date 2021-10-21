@@ -74,7 +74,7 @@ public static ArrayList<Circuit> carregaCircuitsJSON(String nomJSON) {
     // I ara recorrem aquesta llista:
     for (int j = 0; j < jsonArray.length(); j++) {
       // Agafem cada element de l'array amb "get"
-      JSONObject circuit = (JSONObject) jsonArray.get(j);
+      JSONObject circuit = jsonArray.getJSONObject(j);
       elsCircuits.add(new Circuit(circuit));
     }
     
@@ -106,6 +106,8 @@ public static void guardarObjectes(ArrayList<Circuit> elsCircuits, String nomObj
     File f = new File(nomObjectes);
     ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
     
+    // oos.writeObject(elsCircuits);
+    
     for (Circuit c : elsCircuits) {
       oos.writeObject(c);
     }
@@ -118,8 +120,19 @@ public static void guardarObjectes(ArrayList<Circuit> elsCircuits, String nomObj
 
 public static ArrayList<ResultadoCarrera> carregaResultadosXML(String nomXML) {
   ArrayList<ResultadoCarrera> elsResultados = null;
-  
   try {
+    Document doc = ObreXML(nomXML);
+    
+    NodeList resultats = doc.getElementsByTagName("Result");
+    
+    for (int i = 0; i < resultats.getLength(); i++) {
+    
+    }
+    
+  } catch (IOException | ParserConfigurationException | SAXException e) {
+    e.printStackTrace();
+  }
+  /*try {
     File file = new File(nomXML);
     DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
     DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
@@ -146,13 +159,13 @@ public static ArrayList<ResultadoCarrera> carregaResultadosXML(String nomXML) {
     }
   } catch (Exception e) {
     e.printStackTrace();
-  }
+  }*/
   
   return elsResultados;
 }
 
 public static void saveAsCSV(String nomFitxer, ArrayList<ResultadoCarrera> elsResultats) {
-  // TODO LLamar a metodo toCSV
+  
 }
 
 public static Document ObreXML(String nom) throws IOException, ParserConfigurationException, FileNotFoundException, SAXException {
