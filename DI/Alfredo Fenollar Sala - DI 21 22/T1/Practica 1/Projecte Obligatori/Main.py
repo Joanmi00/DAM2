@@ -3,6 +3,10 @@ if __name__ == '__main__':
     import pygame
     # Import random for random numbers
     import random
+    # Import os for filepaths
+    import os
+    # Import time for delays
+    import time
 
     # Import pygame.locals for easier access to key coordinates
     # Updated to conform to flake8 and black standards
@@ -11,6 +15,10 @@ if __name__ == '__main__':
         K_DOWN,
         K_LEFT,
         K_RIGHT,
+        K_w,
+        K_s,
+        K_a,
+        K_d,
         K_ESCAPE,
         KEYDOWN,
         QUIT,
@@ -22,19 +30,25 @@ if __name__ == '__main__':
     class Player(pygame.sprite.Sprite):
         def __init__(self):
             super(Player, self).__init__()
-            self.surf = pygame.image.load("resources/jet.png").convert()
+            self.surf = pygame.image.load(
+                os.path.join(recursos, "jet.png")).convert()
             self.surf.set_colorkey((255, 255, 255), RLEACCEL)
             self.rect = self.surf.get_rect(center=(0, SCREEN_HEIGHT/2))
 
         # Move the sprite based on user keypresses
         def update(self, pressed_keys):
-            if pressed_keys[K_UP]:
+            if pressed_keys[K_UP] or pressed_keys[K_w]:
                 self.rect.move_ip(0, -5)
-            if pressed_keys[K_DOWN]:
+                # I DONT LIKE THE SOUND
+                move_up_sound.play()
+            if pressed_keys[K_DOWN] or pressed_keys[K_s]:
                 self.rect.move_ip(0, 5)
-            if pressed_keys[K_LEFT]:
+                # I DONT LIKE THE SOUND
+                # I DONT LIKE THE SOUND
+                move_down_sound.play()
+            if pressed_keys[K_LEFT] or pressed_keys[K_a]:
                 self.rect.move_ip(-5, 0)
-            if pressed_keys[K_RIGHT]:
+            if pressed_keys[K_RIGHT] or pressed_keys[K_d]:
                 self.rect.move_ip(5, 0)
 
             # Keep player on the screen
@@ -52,7 +66,8 @@ if __name__ == '__main__':
     class Enemy(pygame.sprite.Sprite):
         def __init__(self):
             super(Enemy, self).__init__()
-            self.surf = pygame.image.load("resources/missile.png").convert()
+            self.surf = pygame.image.load(
+                os.path.join(recursos, "missile.png")).convert()
             self.surf.set_colorkey((255, 255, 255), RLEACCEL)
             self.rect = self.surf.get_rect(
                 center=(
@@ -74,35 +89,53 @@ if __name__ == '__main__':
     class Cloud(pygame.sprite.Sprite):
         def __init__(self):
             super(Cloud, self).__init__()
-            self.surf = pygame.image.load("resources/cloud.png").convert()
-            self.surf.set_colorkey((255, 255, 255), RLEACCEL)
+            self.surf = pygame.image.load(
+                os.path.join(recursos, "cloud.png")).convert()
+            self.surf.set_colorkey((0, 0, 0), RLEACCEL)
             self.rect = self.surf.get_rect(
                 center=(
                     random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100),
                     random.randint(0, SCREEN_HEIGHT),
                 )
             )
-            self.speed = 5
 
         # Move the sprite based on speed
         # Remove the sprite when it passes the left edge of the screen
         def update(self):
-            self.rect.move_ip(-self.speed, 0)
+            self.rect.move_ip(-5, 0)
             if self.rect.right < 0:
                 self.kill()
 
     # Setup for sounds. Defaults are good.
     pygame.mixer.init()
+    # pygame.font.init()
 
     # Initialize pygame
     pygame.init()
+
+    dir = os.path.dirname(__file__)
+    recursos = os.path.join(dir, 'resources')
+
+    # Load and play background music
+    pygame.mixer.music.load(os.path.join(recursos, "Apoxode_-_Electric_1.ogg"))
+    pygame.mixer.music.play(loops=-1)
+    pygame.mixer.music.set_volume(0.1)
+
+    # Load all sound files
+    # Sound sources: Jon Fincher
+    collision_sound = pygame.mixer.Sound(
+        os.path.join(recursos, "Collision.ogg"))
+    move_down_sound = pygame.mixer.Sound(
+        os.path.join(recursos, "Falling_putter.ogg"))
+    move_up_sound = pygame.mixer.Sound(
+        os.path.join(recursos, "Rising_putter.ogg"))
 
     # Setup the clock for a decent framerate
     clock = pygame.time.Clock()
 
     # Define constants for the screen width and height
-    SCREEN_WIDTH = 1920
-    SCREEN_HEIGHT = 1080
+    SCREEN_WIDTH = 800
+    SCREEN_HEIGHT = 600
 
     # Create the screen object
     # The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
@@ -116,15 +149,15 @@ if __name__ == '__main__':
     pygame.time.set_timer(ADDENEMY, 250)
 
     # Create a custom event for adding a new cloud
-    ADDCLOUD = pygame.USEREVENT + 2 # ???
+    ADDCLOUD = pygame.USEREVENT + 2  # ???
     pygame.time.set_timer(ADDCLOUD, 1000)
 
     # Create groups to hold enemy sprites and all sprites
-    # - enemies is used for collision detection and position updates
-    # - nuvols is used for position updates
-    # - all_sprites is used for rendering
+    # -enemies is used for collision detection and position updates
     enemies = pygame.sprite.Group()
+    # -nuvols is used for position updates
     nuvols = pygame.sprite.Group()
+    # -all_sprites is used for rendering
     all_sprites = pygame.sprite.Group()
     all_sprites.add(player)
 
@@ -164,7 +197,7 @@ if __name__ == '__main__':
         nuvols.update()
 
         # Fill the screen with black
-        screen.fill((0, 0, 0))
+        screen.fill((135, 206, 250))
 
         # Draw all sprites
         for entity in all_sprites:
@@ -172,12 +205,20 @@ if __name__ == '__main__':
 
         # Check if any enemies have collided with the player
         if pygame.sprite.spritecollideany(player, enemies):
-            # If so, then remove the player and stop the loop
+            # If so, then play sound, remove the player and stop the loop
+            collision_sound.play()
             player.kill()
             running = False
+            # Sleep 0.5s so sound effect plays completely
+            time.sleep(0.5)
 
         # Update the display
         pygame.display.flip()
 
         # Ensure program maintains a rate of 30 frames per second
         clock.tick(30)
+
+# Exit pygame imports
+pygame.mixer.music.stop()
+pygame.mixer.quit()
+pygame.quit()
