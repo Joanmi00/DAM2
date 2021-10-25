@@ -6,8 +6,8 @@ public class consultarJocs {
 public static void main(String[] args) {
   Connection conn = null;
   Statement st = null;
-  
   String sentSQL;
+  
   try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     String connectionUrl = "jdbc:mysql://localhost:3308/BDJocs" +
