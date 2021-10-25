@@ -5,53 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="688a6bb0-4d6c-49d1-8086-a1410326bf0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/2020_AD_APAC1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/modules/2021_AD_Examen01.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Examen/2021_AD_Examen01 RESOLT/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Cercle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Cercle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Figura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Figura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADroid.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Linia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Linia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ieseljust/ad/figures/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/classes/java/main/Examples.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/classes/java/main/Examples.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/resources/main/archivo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/java/Examples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examples/src/main/resources/archivo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../XMLs/archivo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../XMLs/archivo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../XMLs/src/main/java/2021-09-23 ExempleFitxers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../XMLs/src/main/java/2021-09-23 ExempleFitxers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/Alfredo_Fenollar_Sala_PracticaDocker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/DockerManual.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/Pract_opcional_docker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/Practica Docker.odt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Docker/odooDocker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Odoo/Fenollar_Sala_Alfredo--Practica_Odoo.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Odoo/Practica Odoo.odt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Odoo/Tema2Instal_config.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Odoo/UD2_instaOdoo.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T2/Odoo/manual_instal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../SGE/T3/Practica_T3.odt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SGE/T3/Practica_T3.odt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

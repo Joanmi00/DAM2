@@ -20,13 +20,11 @@ import java.util.List;
  * FileManager.java: Classe que s’encarregarà de le gestió de l’emmagatzemament.
  * Serà el que haurem d’implementar, i per això li dedicarem un apartat.
  */
-
 class FileManager {
 
 public FileManager() {
 
 }
-
 
 private boolean validaInt(String s) {
   try {
@@ -248,11 +246,13 @@ public Boolean exportSVG(Escena escena, String file) {
     
     arrel.setAttribute("height", String.valueOf(escena.getX()));
     arrel.setAttribute("width", String.valueOf(escena.getY()));
-    doc.appendChild(arrel);
+    
     
     for (Figura f : escena.LlistaFigures) {
       arrel.appendChild(f.getAsXml(f, doc));
     }
+    
+    doc.appendChild(arrel);
     
     Transformer trans = TransformerFactory.newInstance().newTransformer();
     DOMSource source = new DOMSource(doc);
