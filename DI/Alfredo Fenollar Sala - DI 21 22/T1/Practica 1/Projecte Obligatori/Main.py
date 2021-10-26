@@ -113,6 +113,9 @@ if __name__ == '__main__':
     # Initialize pygame
     pygame.init()
 
+    # Setup the clock for a decent framerate
+    clock = pygame.time.Clock()
+
     dir = os.path.dirname(__file__)
     recursos = os.path.join(dir, 'resources')
 
@@ -129,9 +132,6 @@ if __name__ == '__main__':
         os.path.join(recursos, "Falling_putter.ogg"))
     move_up_sound = pygame.mixer.Sound(
         os.path.join(recursos, "Rising_putter.ogg"))
-
-    # Setup the clock for a decent framerate
-    clock = pygame.time.Clock()
 
     # Define constants for the screen width and height
     SCREEN_WIDTH = 800
