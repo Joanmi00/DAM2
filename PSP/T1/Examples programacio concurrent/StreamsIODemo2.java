@@ -1,11 +1,8 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class StreamsIODemo2 {
   public static void main(String[] args) {
+    BufferedWriter bw = null;
     try {
       // En primer lloc, creem l'objecte ProcessBuilder,
       // i l'inicialitzem amb l'ordre que anem a utilitzar.
@@ -22,15 +19,19 @@ public class StreamsIODemo2 {
       // I bolquem l'eixida a un nou fitxer, amb un
       // BufferedWriter, i de forma molt similar
       // a l'exemple anterior
-      BufferedWriter bw = new BufferedWriter(new FileWriter(new File("calendari2020.txt")));
+      bw = new BufferedWriter(new FileWriter("calendari2020.txt"));
       String line;
       while ((line = br.readLine()) != null) {
         bw.write(line + "\n");
       }
-      bw.close();
-
     } catch (Exception e) {
       e.printStackTrace();
+    } finally {
+      try {
+        bw.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
   }
 }

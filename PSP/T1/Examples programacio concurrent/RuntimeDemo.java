@@ -39,6 +39,10 @@ public class RuntimeDemo {
 
     // I ara invoquem el recol·lector de fem, perquè ens netege les referències
     rd.netejaFem();
+    /*
+     * int cont = 0; for (long i = 0; i < 10_000_000_00; i++) { cont++; }
+     * System.out.println(cont);
+     */
 
     // I tornem a obtindre les mateixes dades
     System.out.println("\nEstat després de cridar el recol·lector de fem:");
