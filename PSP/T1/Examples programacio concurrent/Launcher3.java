@@ -3,14 +3,13 @@ import java.util.concurrent.TimeUnit;
 public class Launcher3 {
   public static void main(String[] args) {
     try {
-      String app = "pluma";
+      String app = "konsole";
       ProcessBuilder pb;
       Process p;
       Boolean isProcessDead;
 
-      System.out.println("Iniciant " + app);
       pb = new ProcessBuilder(app);
-
+      System.out.println("Iniciant " + app);
       p = pb.start();
       System.out.println(app + " s'ha carregat. Esperant 3 segons");
 

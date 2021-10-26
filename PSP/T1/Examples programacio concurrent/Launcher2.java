@@ -1,7 +1,7 @@
 public class Launcher2 {
   public static void main(String[] args) {
     try {
-      String app = "firefox";
+      String app = "konsole";
       Process p1, p2;
       ProcessBuilder pb;
 
