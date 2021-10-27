@@ -44,7 +44,6 @@ if __name__ == '__main__':
             if pressed_keys[K_DOWN] or pressed_keys[K_s]:
                 self.rect.move_ip(0, 5)
                 # I DONT LIKE THE SOUND
-                # I DONT LIKE THE SOUND
                 move_down_sound.play()
             if pressed_keys[K_LEFT] or pressed_keys[K_a]:
                 self.rect.move_ip(-5, 0)
