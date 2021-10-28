@@ -3,3 +3,10 @@
 
 Las librerías de compatibilidad (support library) de Android:
 https://www.youtube.com/watch?v=l4YlMowyw34
+
+Ús del ConstraintLayout per al disseny LayoutsURL:
+https://developer.android.com/codelabs/constraint-layout#0
+
+Tutories col·lectives del semi:
+https://tc2122.joamuran.net/#collection/de9d1e1d-9f25-494e-8461-1b6b2374ca35
+

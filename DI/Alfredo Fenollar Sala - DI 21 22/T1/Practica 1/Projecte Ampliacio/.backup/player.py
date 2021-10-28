@@ -17,11 +17,11 @@ class Player:
     def move(self):
         keys = pygame.key.get_pressed()
 
-        # if keys[pygame.K_a] or keys[pygame.K_LEFT]:
-        #     self.x -= self.vel
-        #
-        # if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
-        #     self.x += self.vel
+        if keys[pygame.K_a] or keys[pygame.K_LEFT]:
+            self.x -= self.vel
+
+        if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
+            self.x += self.vel
 
         if keys[pygame.K_w] or keys[pygame.K_UP]:
             self.y -= self.vel
