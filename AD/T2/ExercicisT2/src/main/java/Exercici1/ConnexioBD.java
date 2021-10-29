@@ -8,7 +8,6 @@ Connection laConnexio = null;
 
 public void connect() {
   try {
-    
     String url = "jdbc:sqlite:/src/main/resources/users.db";
     laConnexio = DriverManager.getConnection(url);
     System.out.println("Connection to SQLite has been established.");

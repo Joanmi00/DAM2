@@ -1,0 +1,12 @@
+/mnt/extra-addons/account-financial-reporting,
+/mnt/extra-addons/account-financial-tools,
+/mnt/extra-addons/account-fiscal-rule,
+/mnt/extra-addons/account-payment,
+/mnt/extra-addons/community-data-files,
+/mnt/extra-addons/delivery-carrier,
+/mnt/extra-addons/edi,
+/mnt/extra-addons/mis-builder,
+/mnt/extra-addons/partner-contact,
+/mnt/extra-addons/bank-payment,
+/mnt/extra-addons/account-invoicing,
+/mnt/extra-addons/intrastat-extrastat
