@@ -1,2 +1,1 @@
 https://github.com/Alfiefe10/DI-21-22-Alfredo-Fenollar-Sala.git
-https://github.com/pulseaudio-equalizer-ladspa/equalizer.git

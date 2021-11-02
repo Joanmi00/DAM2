@@ -23,9 +23,12 @@ class Ball:
         newx = self.x + self.vx
         newy = self.y + self.vy
 
-        if newx < config.RADIUS or newx > config.WIDTH - config.RADIUS:
+        if newx < config.RADIUS:
             self.vx = -self.vx
-            print("F")
+            print("Guanya jugador 2")
+        elif newx > config.WIDTH - config.RADIUS:
+            self.vx = -self.vx
+            print("Guanya jugador 1")
         elif newy < config.RADIUS or newy > config.HEIGHT - config.RADIUS:
             self.vy = -self.vy
         elif newx - config.RADIUS < config.PADDLE_WIDTH \

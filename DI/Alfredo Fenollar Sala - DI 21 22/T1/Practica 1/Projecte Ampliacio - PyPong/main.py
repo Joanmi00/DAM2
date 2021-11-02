@@ -23,7 +23,7 @@ def redraw_window(screen, player1, player2, ball):
     # Visualize the changes made
     player1.draw(config.color_p1)
     player2.draw(config.color_p2)
-    # ball.update(player1, player2)
+    ball.update(player1, player2)
     pygame.display.update()
 
 
@@ -33,10 +33,15 @@ clock = pygame.time.Clock()
 running = True
 run = True
 n = Network()
-p1 = n.get_p()
+objectes_rebuts1 = n.get_p()
+
+p1 = objectes_rebuts1[0]
+bola = objectes_rebuts1[1]
 
 while running:
-    p2 = n.send(p1)
+    objectes_rebuts2 = n.send(p1)
+    p2 = objectes_rebuts2[0]
+    # bola = objectes_rebuts2[1]
 
     for event in pygame.event.get():
         if event.type == KEYDOWN:
@@ -46,7 +51,7 @@ while running:
             running = False
 
     p1.update(pygame.Color("white"))
-    redraw_window(config.screen, p1, p2, "ball")
+    redraw_window(config.screen, p1, p2, bola)
     clock.tick(config.FRAMERATE)
 
 # Exit pygame imports
