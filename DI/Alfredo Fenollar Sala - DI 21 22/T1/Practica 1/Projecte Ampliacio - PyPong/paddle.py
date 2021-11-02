@@ -13,9 +13,6 @@ class Paddle:
         pygame.draw.rect(config.screen, colour, pygame.Rect(
             (self.x, self.y),  # x1, y1
             (self.paddle_width, self.paddle_height)))  # x2, y2
-        # pygame.draw.rect(config.screen, colour, pygame.Rect(
-        #     (config.WIDTH - self.paddle_width, self.y - self.paddle_height // 2),
-        #     (self.paddle_width, self.paddle_height)))
 
     def update(self, colour):
         self.y = pygame.mouse.get_pos()[1]

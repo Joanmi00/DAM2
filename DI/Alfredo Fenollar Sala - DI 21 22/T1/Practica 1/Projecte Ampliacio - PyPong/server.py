@@ -42,12 +42,10 @@ def threaded_client(conn_, player):
                 break
             else:
                 if player == 0:
-                    # objects[0] is player 1, objects[2] is ball
-                    # reply = objects[0]
+                    # objects[1] is player 2
                     reply = [objects[1], ball]
                 else:
-                    # objects[1] is player 2, objects[2] is ball
-                    # reply = objects[1]
+                    # objects[0] is player 1
                     reply = [objects[0], ball]
 
                 print("Received: ", data)

@@ -34,11 +34,11 @@ class Ball:
         elif newx - config.RADIUS < config.PADDLE_WIDTH \
                 and paddle1.y <= newy <= (paddle1.y + config.PADDLE_HEIGHT):
             self.vx = -self.vx
-            print("TOQUE")
+            print("TOQUE P1")
         elif newx + config.RADIUS > config.WIDTH - config.PADDLE_WIDTH \
                 and paddle1.y <= newy <= (paddle2.y + config.PADDLE_HEIGHT):
             self.vx = -self.vx
-            print("TOQUE")
+            print("TOQUE P2")
         else:
             self.x = newx
             self.y = newy

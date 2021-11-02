@@ -9,6 +9,7 @@ PADDLE_WIDTH = 20
 PADDLE_HEIGHT = 120
 RADIUS = 20
 
+color_white = pygame.Color("white")
 color_bg = pygame.Color("black")
 color_ball = pygame.Color("green")
 color_p1 = pygame.Color("blue")

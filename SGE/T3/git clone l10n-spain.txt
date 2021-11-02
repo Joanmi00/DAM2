@@ -1,1 +1,0 @@
-git clone https://github.com/OCA/l10n-spain.git --branch 13.0
