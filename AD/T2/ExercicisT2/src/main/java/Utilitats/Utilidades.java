@@ -12,22 +12,26 @@ private final static BufferedReader entradaConsola = new java.io.BufferedReader(
 
 // PERSONALES
 
-public static void Menu() {
-  System.out.println("\n============= MENU ============");
-  System.out.println("0. Eixir del programa");
-  System.out.println("1. Donar d’alta un contacte");
-  System.out.println("2. Consultar un contacte pel seu nom");
-  System.out.println("3. Saber la quantitat d’amics enregistrats");
-}
-
 public static void Esqueleto() {
   do {
-    Utilidades.Menu();
-    if (Utilidades.leerEntero("[Selecciona una opcio]\n>> ") == 0) { //  EIXIR
-      System.out.println("\nADEU");
-      System.exit(0);
-    } else {
-      System.out.println("\nERROR");
+    System.out.println("\n============= MENU ============" +
+                       "\n0. Salir del programa" +
+                       "\n1. Mantenimiento tabla de Departamentos" +
+                       "\n2. Mantenimiento tabla de Empleados");
+    
+    switch (Utilidades.leerEntero("[Selecciona una opcio]\n>> ")) {//  EIXIR
+      case 0:
+        System.out.println("\nADIOS");
+        System.exit(0);
+        break;
+      
+      case 1:
+        System.out.println("Case 1");
+        break;
+      
+      default:
+        System.out.println("\nERROR");
+        break;
     }
   } while (true);
 }
@@ -38,21 +42,18 @@ public static void linia(int n) {
   for (int i = 0; i < n; i++)
     System.out.print("-");
   System.out.println();
-  
 }
 
 public static void liniadoble(int n) {
   for (int i = 0; i < n; i++)
     System.out.print("=");
   System.out.println();
-  
 }
 
 public static void liniaart(int n) {
   for (int i = 0; i < n; i++)
     System.out.print("*");
   System.out.println();
-  
 }
 
 // LEER
