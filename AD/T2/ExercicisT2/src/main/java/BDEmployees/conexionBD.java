@@ -1,31 +1,36 @@
 package BDEmployees;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 public class conexionBD {
 
-private static Connection laConnexio = null;
+private static Connection connection = null;
 private static final int LIMIT = 10;
-private static final String BD = "employeesMini";
-private static final String encoding = "UTF-8";
-private static final String user = "root";
-private static final String pass = "root";
+// Carpeta padre para los archivos a manipular
+private static final String resources = "src/main/resources/";
 
 public static void connect() {
   try {
     // Carreguem el driver JDBC
     Class.forName("com.mysql.cj.jdbc.Driver");
     
-    // Creem la connexió a la base de dades
-    String connectionUrl = "jdbc:mysql://localhost:3308/" + BD +
-                           "?useUnicode=true&characterEncoding=" + encoding +
-                           "&user=" + user +
-                           "&password=" + pass;
+    Properties prop = new Properties();
+    prop.load(new FileInputStream(resources + "/archivo.properties"));
     
-    laConnexio = DriverManager.getConnection(connectionUrl);
+    String host = prop.getProperty("host");
+    String port = prop.getProperty("port");
+    String BD = prop.getProperty("BD");
+    
+    // Creem la connexió a la base de dades
+    String connectionUrl = "jdbc:mysql://" + host + ":" + port + "/" + BD;
+    
+    connection = DriverManager.getConnection(connectionUrl, prop);
     System.out.println("La conexion de SQLite a la BD ha sido establecida.");
     
-  } catch (SQLException | ClassNotFoundException e) {
+  } catch (SQLException | ClassNotFoundException | IOException e) {
     e.printStackTrace();
   }
 }
@@ -33,8 +38,8 @@ public static void connect() {
 public static void disConnect() {
   try {
     
-    if (laConnexio != null) {
-      laConnexio.close();
+    if (connection != null) {
+      connection.close();
       System.out.println("La conexion de SQLite a la BD se ha cerrado");
     } else {
       System.out.println("No existe la conexion");
@@ -46,7 +51,7 @@ public static void disConnect() {
 }
 
 public static Connection getConnection() {
-  return laConnexio;
+  return connection;
 }
 
 public static int getLIMIT() {

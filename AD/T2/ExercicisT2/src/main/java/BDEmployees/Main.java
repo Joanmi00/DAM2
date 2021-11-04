@@ -4,11 +4,11 @@ import Utilitats.Utilidades;
 
 import java.sql.Connection;
 
-public class App {
+public class Main {
 public static void main(String[] args) {
   System.out.println("-------------------------------\n");
   conexionBD.connect();
-  Connection laConnexio = conexionBD.getConnection();
+  Connection connection = conexionBD.getConnection();
   
   do {
     System.out.println("\n============= MENU ============" +
@@ -25,12 +25,12 @@ public static void main(String[] args) {
       
       case 1:
         System.out.println("\n>Mantenimiento tabla de Departamentos:");
-        switchDepartamentos(laConnexio);
+        switchDepartamentos(connection);
         break;
       
       case 2:
         System.out.println("\n>Mantenimiento tabla de Empleados");
-        switchEmpleados(laConnexio);
+        switchEmpleados(connection);
         break;
       
       default:
@@ -58,22 +58,22 @@ public static void switchDepartamentos(Connection laConnexion) {
       
       case 1:
         System.out.println("\n-Crear Departamento:");
-        mantenimientoDepartamentos.crear();
+        Departamentos.crear(laConnexion);
         break;
       
       case 2:
         System.out.println("\n-Modificar Departamento");
-        mantenimientoDepartamentos.modificar();
+        Departamentos.modificar(laConnexion);
         break;
       
       case 3:
         System.out.println("\n-Eliminar Departamento");
-        mantenimientoDepartamentos.eliminar();
+        Departamentos.eliminar(laConnexion);
         break;
       
       case 4:
         System.out.println("\n-Buscar Departamento");
-        mantenimientoDepartamentos.buscar();
+        Departamentos.buscar(laConnexion);
         break;
       
       default:
@@ -101,22 +101,22 @@ public static void switchEmpleados(Connection laConnexion) {
       
       case 1:
         System.out.println("\n-Crear Empleado:");
-        mantenimientoEmpleados.crear();
+        Empleados.crear(laConnexion);
         break;
       
       case 2:
         System.out.println("\n-Modificar Empleado");
-        mantenimientoEmpleados.modificar();
+        Empleados.modificar(laConnexion);
         break;
       
       case 3:
         System.out.println("\n-Eliminar Empleado");
-        mantenimientoEmpleados.eliminar();
+        Empleados.eliminar(laConnexion);
         break;
       
       case 4:
         System.out.println("\n-Buscar Empleado");
-        mantenimientoEmpleados.buscar();
+        Empleados.buscar(laConnexion);
         break;
       
       default:
