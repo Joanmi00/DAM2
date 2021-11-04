@@ -11,8 +11,9 @@ private static final String tabla = "departments";
 public static void crear(Connection connection) {
   try {
     // Queremos insertar un nuevo Departamento, pidiendo al usuario los datos a insertar
-    String dept_no = Utilidades.leerTexto("Dime el numero del departamento: ");
-    String dept_name = Utilidades.leerTexto("Dime el nombre del departamento: ");
+    System.out.printf("Del departamento a insertar, dame los siguientes datos:");
+    String dept_no = Utilidades.leerTexto("Numero: ");
+    String dept_name = Utilidades.leerTexto("Nombre: ");
     
     String sentenciaPreparada = "INSERT INTO " + tabla + " VALUES (?,?)";
     
