@@ -1,6 +1,6 @@
 import pygame
 
-# Constants
+# CONSTANTS
 WIDTH = 600
 HEIGHT = 600
 VELOCITY = 10

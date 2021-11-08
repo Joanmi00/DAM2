@@ -1,4 +1,4 @@
-package com.psp.multiplica;
+package ExamplesProgramacioConcurrent.com.psp.multiplica;
 
 public class Multiplica {
 public static void main(String[] args) {

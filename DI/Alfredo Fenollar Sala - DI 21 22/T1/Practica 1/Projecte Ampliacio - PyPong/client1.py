@@ -45,6 +45,7 @@ while running:
                 running = False
         elif event.type == QUIT:
             running = False
+
     clock.tick(config.FRAMERATE)
 
 # Exit pygame imports
