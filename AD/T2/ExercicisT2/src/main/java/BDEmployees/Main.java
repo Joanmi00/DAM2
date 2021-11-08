@@ -38,8 +38,6 @@ public static void main(String[] args) {
         break;
     }
   } while (true);
-  
-//  conexionBD.disConnect();
 }
 
 public static void switchDepartamentos(Connection laConnexion) {
