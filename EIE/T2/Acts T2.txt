@@ -58,12 +58,18 @@ b) Estabilidad - Dinámica
 c) Mercado de Competencia Perfecta
 d) Integración - Integrado
 e) Riesgo económico alto
-Estimo el grado de competencia actual de medio, teniendo en cuenta estas variables.
+Estimo el grado de competencia actual de medio, teniendo en cuenta estas variables.El libro negro del emprendedo
 
 Act. 3
 Productos Sustitutivos:
 1) Móviles y camaras de fotos
 2) Fotógrafos profesionales y programas de edición, vídeo, etc.
+
+Pag. 50 Act. 1
+b) 250eur, 1200ud.
+c) Habria menos oferta, 600uds.
+d) Habria menos demanda, 600uds.
+
 
 Pag. 73 Act. 4
 a) Fortaleza
@@ -74,3 +80,16 @@ e) Amenaza
 f) Oportunidad
 
 Eliseo podría contratar a alguien mas para aprovechar la oportunidad de tener mas clientes de los que puede atender, y así afianzar su empresa antes de que se implante el centro médico.
+
+Act extra Equilibrio Mercado.
+-¿Cual es el punto de equilibrio?
+	El punto de equilibrio está en un precio de 2 eur.
+
+-¿Que indica el equilibrio de mercado?
+	El precio para el cual la cantidad ofertada y la cantidad demandada son equivalentes
+
+-¿Que ocurriria si el precio fuera de 3eur?
+	Habria un exceso de oferta
+
+-¿Y de 1eur?
+	Habria un exceso de demanda
