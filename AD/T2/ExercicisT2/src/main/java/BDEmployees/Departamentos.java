@@ -75,28 +75,25 @@ public static void eliminar(Connection connection) {
   } catch (SQLException e) {
     e.printStackTrace();
   }
-  
 }
 
 public static void buscar(Connection connection) {
-  String sentSQL = "SELECT * FROM departments";
-  
-  {
-    try {
-      Statement st = connection.createStatement();
-      
-      ResultSet res = st.executeQuery(sentSQL);
-      
-      while (res.next()) {
-        System.out.println("Numero: " + res.getString("dept_no") + "\t");
-        System.out.println("Nom: " + res.getString("dept_name"));
-      }
-      
-      res.close();
-      
-    } catch (SQLException throwables) {
-      throwables.printStackTrace();
+  try {
+    String sentSQL = "SELECT * FROM departments";
+    
+    Statement st = connection.createStatement();
+    
+    ResultSet res = st.executeQuery(sentSQL);
+    
+    while (res.next()) {
+      System.out.println("Numero: " + res.getString("dept_no") + "\t");
+      System.out.println("Nom: " + res.getString("dept_name"));
     }
+    
+    res.close();
+    
+  } catch (SQLException throwables) {
+    throwables.printStackTrace();
   }
 }
 }
