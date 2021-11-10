@@ -10,6 +10,49 @@ public class Empleados {
 
 private static final String tabla = "employees";
 
+public static void menu(Connection laConnexion) {
+  boolean bucle = true;
+  do {
+    System.out.println("\n============= DEPARTAMENTOS ============" +
+                       "\n0. Volver a Menu Principal" +
+                       "\n1. Crear Empleado" +
+                       "\n2. Modificar Empleado" +
+                       "\n3. Eliminar Empleado" +
+                       "\n4. Buscar Empleado");
+    
+    switch (Utilidades.leerEntero("\n[Selecciona una opcion]\n>> ")) {
+      case 0: // SALIR
+        System.out.println("\nVolviendo a Menu Principal...");
+        bucle = false;
+        break;
+      
+      case 1:
+        System.out.println("\n-Crear Empleado:");
+        Empleados.crear(laConnexion);
+        break;
+      
+      case 2:
+        System.out.println("\n-Modificar Empleado");
+        Empleados.modificar(laConnexion);
+        break;
+      
+      case 3:
+        System.out.println("\n-Eliminar Empleado");
+        Empleados.eliminar(laConnexion);
+        break;
+      
+      case 4:
+        System.out.println("\n-Buscar Empleado");
+        Empleados.buscar(laConnexion);
+        break;
+      
+      default:
+        System.out.println("\nERROR");
+        break;
+    }
+  } while (bucle);
+}
+
 public static void crear(Connection connection) {
   try {
     // Queremos insertar un nuevo Departamento, pidiendo al usuario los datos a insertar
