@@ -4,8 +4,6 @@ import Utilitats.Utilidades;
 
 import java.sql.*;
 
-import static BDEmployees.conexionBD.getLIMIT;
-
 public class Empleados {
 
 private static final String tabla = "employees";
@@ -57,27 +55,28 @@ public static void crear(Connection connection) {
   try {
     // Queremos insertar un nuevo Departamento, pidiendo al usuario los datos a insertar
     System.out.println("Del empleado a insertar, dame los siguientes datos:");
-    String emp_no = Utilidades.leerTexto("Numero de empleado: ");
-    String birth_date = Utilidades.leerTexto("Cumpleaños: ");
+    int emp_no = Utilidades.leerEntero("Numero de empleado: ");
+    Date birth_date = Date.valueOf(Utilidades.leerTexto("Cumpleaños (ej. 1956-02-26): "));
     String first_name = Utilidades.leerTexto("Nombre: ");
-    String last_name = Utilidades.leerTexto("Apellidos: ");
-    String gender = Utilidades.leerTexto("Genero (F/M): ");
-    String hire_date = Utilidades.leerTexto("Fecha de contratacion: ");
+    String last_name = Utilidades.leerTexto("Apellido: ");
+    String gender;
+    do {
+      gender = Utilidades.leerTexto("Genero (F/M): ").toUpperCase();
+    } while (!gender.equals("M") && !gender.equals("F") );
+    Date hire_date = Date.valueOf(Utilidades.leerTexto("Fecha de contratacion (ej. 1956-02-26): "));
     
     String sentenciaPreparada = "INSERT INTO " + tabla + " VALUES (?,?,?,?,?,?)";
-    
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
-    
-    pst.setString(1, emp_no);
-    pst.setString(2, birth_date);
+    pst.setInt(1, emp_no);
+    pst.setDate(2, birth_date);
     pst.setString(3, first_name);
     pst.setString(4, last_name);
     pst.setString(5, gender);
-    pst.setString(6, hire_date);
-    
+    pst.setDate(6, hire_date);
     int res = pst.executeUpdate();
     
     System.out.println("\nInsertadas " + res + " filas.");
+    
   } catch (SQLException e) {
     e.printStackTrace();
   }
@@ -91,14 +90,11 @@ public static void modificar(Connection connection) {
     String dept_no = Utilidades.leerTexto("Numero nuevo: ");
     String dept_name = Utilidades.leerTexto("Nombre nuevo: ");
     
-    String sentenciaPreparada = "UPDATE " + tabla + " SET  `dept_no` = (?), `dept_name` = (?) WHERE `dept_no` = (?);";
-    
+    String sentenciaPreparada = "UPDATE " + tabla + " SET  dept_no = (?), dept_name = (?) WHERE dept_no = (?);";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
-    
     pst.setString(1, dept_no);
     pst.setString(2, dept_name);
     pst.setString(3, old_dept_no);
-    
     int res = pst.executeUpdate();
     
     System.out.println("\nModificadas " + res + " filas.");
@@ -112,14 +108,11 @@ public static void modificar(Connection connection) {
 
 public static void eliminar(Connection connection) {
   try {
-    String dept_no = Utilidades.leerTexto("Dime el numero del departamento a eliminar: ");
+    String dept_no = Utilidades.leerTexto("Dime el numero del empleado a eliminar: ");
     
-    String sentenciaPreparada = "DELETE FROM departments WHERE dept_no = (?);";
-    
+    String sentenciaPreparada = "DELETE FROM " + tabla + " WHERE emp_no = (?);";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
-    
     pst.setString(1, dept_no);
-    
     int res = pst.executeUpdate();
     
     System.out.println("\nEliminadas " + res + " filas.");
@@ -131,21 +124,22 @@ public static void eliminar(Connection connection) {
 
 public static void buscar(Connection connection) {
   try {
-    String sentSQL = "SELECT * FROM departments";
+    String dept_no = Utilidades.leerTexto("Dime el numero del departamento a buscar: ");
     
-    Statement st = connection.createStatement();
+    String sentenciaPreparada = "SELECT * FROM " + tabla + " WHERE dept_no = ?;";
+    PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
+    pst.setString(1, dept_no);
+    ResultSet res = pst.executeQuery();
     
-    ResultSet res = st.executeQuery(sentSQL);
-    
-    while (res.next()) {
+    if (res.next()) {
       System.out.println("Numero: " + res.getString("dept_no") + "\t");
-      System.out.println("Nom: " + res.getString("dept_name"));
-    }
+      System.out.println("Nombre: " + res.getString("dept_name"));
+    } else System.out.println("No hay ningun departamento con ese numero");
     
     res.close();
     
-  } catch (SQLException throwables) {
-    throwables.printStackTrace();
+  } catch (SQLException e) {
+    e.printStackTrace();
   }
 }
 }

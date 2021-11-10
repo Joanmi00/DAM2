@@ -79,7 +79,7 @@ public static void modificar(Connection connection) {
     String dept_no = Utilidades.leerTexto("Numero nuevo: ");
     String dept_name = Utilidades.leerTexto("Nombre nuevo: ");
     
-    String sentenciaPreparada = "UPDATE " + tabla + " SET  `dept_no` = (?), `dept_name` = (?) WHERE `dept_no` = (?);";
+    String sentenciaPreparada = "UPDATE " + tabla + " SET  dept_no = (?), dept_name = (?) WHERE dept_no = (?);";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
     pst.setString(1, dept_no);
     pst.setString(2, dept_name);
@@ -98,8 +98,8 @@ public static void modificar(Connection connection) {
 public static void eliminar(Connection connection) {
   try {
     String dept_no = Utilidades.leerTexto("Dime el numero del departamento a eliminar: ");
-    String sentenciaPreparada = "DELETE FROM departments WHERE dept_no = (?);";
     
+    String sentenciaPreparada = "DELETE FROM " + tabla + " WHERE dept_no = (?);";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
     pst.setString(1, dept_no);
     int res = pst.executeUpdate();
@@ -113,16 +113,19 @@ public static void eliminar(Connection connection) {
 
 public static void buscar(Connection connection) {
   try {
-    String dept_no = Utilidades.leerTexto("Dime el numero del departamento a eliminar: ");
-    String sentenciaPreparada = "SELECT FROM departments WHERE dept_no = (?);";
+    String dept_no = Utilidades.leerTexto("Dime el numero del departamento a buscar: ");
     
+    String sentenciaPreparada = "SELECT * FROM " + tabla + " WHERE dept_no = ?;";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
     pst.setString(1, dept_no);
-    int res = pst.executeUpdate();
-
-//    System.out.println("Numero: "+ res.getString("dept_no")+"\t");
-//    System.out.println("Nom: "+ res.getString("dept_name"));
-    System.out.println("\nEliminadas " + res + " filas.");
+    ResultSet res = pst.executeQuery();
+    
+    if (res.next()) {
+      System.out.println("Numero: " + res.getString("dept_no") + "\t");
+      System.out.println("Nombre: " + res.getString("dept_name"));
+    } else System.out.println("No hay ningun departamento con ese numero");
+    
+    res.close();
     
   } catch (SQLException e) {
     e.printStackTrace();
