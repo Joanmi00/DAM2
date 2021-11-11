@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
-      "args": ["primer argument", "segon argument"]
+      "args": ["APP", "Text"]
     }
   ]
 }

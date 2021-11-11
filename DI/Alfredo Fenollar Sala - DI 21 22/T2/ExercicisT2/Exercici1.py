@@ -4,25 +4,27 @@
 # 4. Afig el botó a la part central de al finestra amb setCentralWidget(<<component>>).
 # 5. Recorda mostrar la finestra i iniciar el bucle d'esdeveniments
 
-from PyQt5.QtWidgets import QApplication,  QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication,  QMainWindow, QPushButton
 # Importamos sys si necesitamos usar argumentos
 import sys
 
 
 class MainWindow(QMainWindow):
-    def __init__(self, title="La meua aplicació", text="Aceptar"):
+    def __init__(self, title="Mi Aplicación", text="Aceptar"):
         super().__init__()
         # Main window config
-        self.setGeometry(500, 500, 450, 220)
-        self.setMinimumSize(150, 120)
-
-        # Title
         self.setWindowTitle(title)
+        self.setGeometry(600, 300, 300, 200)
+        self.setMinimumSize(200, 150)
+        self.setMaximumSize(400, 250)
+        # self.setFixedSize(400,600)
 
         # QPushButton
-        button = QPushButton(text, self)
-        self.setCentralWidget(button)
-        button.clicked.connect(QApplication.instance().quit)
+        self.button = QPushButton(text)
+        self.setCentralWidget(self.button)
+        self.button.clicked.connect(QApplication.instance().quit)
+        # self.button.show() No hace falta porque button es parte the la ventana
+        # y ya se hace un show de la ventana
 
         # Status bar
         self.statusBar().showMessage('Alfre')
@@ -30,12 +32,9 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
-    if len(sys.argv) >= 3:
-        window = MainWindow(sys.argv[1], sys.argv[2])
-    else:
-        window = MainWindow()
+    window = MainWindow()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 if __name__ == '__main__':
