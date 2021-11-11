@@ -2,3 +2,4 @@
 # Both the directory itself and its contents will be ignored.
 /_Extras
 TO DO.txt
+.venv
