@@ -55,6 +55,7 @@ public static void crear(Connection connection) {
   try {
     // Queremos insertar un nuevo Departamento, pidiendo al usuario los datos a insertar
     System.out.println("Del empleado a insertar, dame los siguientes datos:");
+    // TODO forzar introduccion correcta
     int emp_no = Utilidades.leerEntero("Numero de empleado: ");
     Date birth_date = Date.valueOf(Utilidades.leerTexto("Cumpleaños (ej. 1956-02-26): "));
     String first_name = Utilidades.leerTexto("Nombre: ");
@@ -135,17 +136,21 @@ public static void eliminar(Connection connection) {
 
 public static void buscar(Connection connection) {
   try {
-    String dept_no = Utilidades.leerTexto("Dime el numero del departamento a buscar: ");
+    String dept_no = Utilidades.leerTexto("Dime el numero del empleado a buscar: ");
     
-    String sentenciaPreparada = "SELECT * FROM " + tabla + " WHERE dept_no = ?;";
+    String sentenciaPreparada = "SELECT * FROM " + tabla + " WHERE emp_no = ?;";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
     pst.setString(1, dept_no);
     ResultSet res = pst.executeQuery();
     
     if (res.next()) {
-      System.out.println("Numero: " + res.getString("dept_no") + "\t");
-      System.out.println("Nombre: " + res.getString("dept_name"));
-    } else System.out.println("No hay ningun departamento con ese numero");
+      System.out.println("Numero de empleado: " + res.getString("emp_no") + "\t");
+      System.out.println("Cumpleaños: " + res.getString("birth_date") + "\t");
+      System.out.println("Nombre: " + res.getString("first_name") + "\t");
+      System.out.println("Apellido: " + res.getString("last_name") + "\t");
+      System.out.println("Genero: " + res.getString("gender") + "\t");
+      System.out.println("Fecha de contratacion: " + res.getString("hire_date"));
+    } else System.out.println("No hay ningun empleado con ese numero");
     
     res.close();
     

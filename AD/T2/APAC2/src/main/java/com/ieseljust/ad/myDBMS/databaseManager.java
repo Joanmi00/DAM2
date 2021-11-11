@@ -14,15 +14,15 @@ String pass;
 String dbname;
 
 databaseManager() {
-  // TO-DO:   Inicialització dels atributs de la classe per defecte
+  // TODO: Inicialització dels atributs de la classe per defecte
 }
 
 databaseManager(String server, String port, String user, String pass, String dbname) {
-  // TO-DO:   Inicialització dels atributs de la classe amb els valors indicats
+  // TODO: Inicialització dels atributs de la classe amb els valors indicats
 }
 
 public Connection connectDatabase() {
-  // TO-DO:   Crea una connexió a la base de dades, i retorna aquesta o null, si no s'ha pogut connectar.
+  // TODO: Crea una connexió a la base de dades, i retorna aquesta o null, si no s'ha pogut connectar.
   
   // Passos:
   // 1. Carreguem el driver JDBC
@@ -35,7 +35,7 @@ public Connection connectDatabase() {
 }
 
 public void showTables() {
-  // TO-DO: Mostra un llistat amb les taules de la base de dades
+  // TODO: Mostra un llistat amb les taules de la base de dades
   
   // Passos:
   // 1. Establir la connexió a la BD
@@ -46,9 +46,8 @@ public void showTables() {
   // Recordeu el tractament d'errors
 }
 
-
 public void insertIntoTable(String table) {
-  // TO-DO: Afig informació a la taula indicada
+  // TODO: Afig informació a la taula indicada
   
   // Passos
   // 1. Estableix la connexió amb la BD
@@ -66,16 +65,15 @@ public void insertIntoTable(String table) {
   
 }
 
-
 public void showDescTable(String table) {
-  // TO-DO: Mostra la descripció de la taula indicada,
+  // TODO: Mostra la descripció de la taula indicada,
   //        mostrant: nom, tipus de dada i si pot tindre valor no nul
   //        Informeu també de les Claus Primàries i externes
   
 }
 
 public void startShell() {
-  // TO-DO: Inicia la shell del mode base de dades
+  // TODO: Inicia la shell del mode base de dades
   
 }
 }

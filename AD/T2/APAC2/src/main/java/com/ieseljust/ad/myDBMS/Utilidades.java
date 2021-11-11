@@ -7,6 +7,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.ieseljust.ad.myDBMS.ConsoleColors.*;
+
 public class Utilidades {
 private final static BufferedReader entradaConsola = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 
@@ -34,6 +36,10 @@ public static void Esqueleto() {
         break;
     }
   } while (true);
+}
+
+public static void ERROR() {
+  System.out.println(RED + "ERROR" + RESET);
 }
 
 // FER

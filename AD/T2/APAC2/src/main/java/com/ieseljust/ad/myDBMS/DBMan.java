@@ -13,39 +13,28 @@ import static com.ieseljust.ad.myDBMS.ConsoleColors.*;
 
 
 public class DBMan {
-    /*
-    Esta és la classe llançadora de l'aplicació
-    Conté el mètode main que recull la informació del servidor
-    i inicia una instància de connectionManager per 
-    gestionar les connexions
-    */
+  /*
+  Esta és la classe llançadora de l'aplicació
+  Conté el mètode main que recull la informació del servidor
+  i inicia una instància de connectionManager per
+  gestionar les connexions
+  */
 
 public static void main(String[] args) {
-  
-  connectionManager cm;
-  Scanner keyboard = new Scanner(System.in);
-  String user, pass, ip, port;
+  System.out.println("-------------------------------\n");
+  String user, pass, server, port;
   
   do {
     
-    System.out.print(GREEN_BOLD_BRIGHT + "# Server: " + RESET);
-    ip = keyboard.nextLine();
-    
-    System.out.print(GREEN_BOLD_BRIGHT + "# Port: " + RESET);
-    port = keyboard.nextLine();
-    
-    System.out.print(GREEN_BOLD_BRIGHT + "# Username: " + RESET);
-    user = keyboard.nextLine();
-    
-    System.out.print(GREEN_BOLD_BRIGHT + "# Password: " + BLACK);
-    pass = keyboard.nextLine();
+    server = Utilidades.leerTexto(GREEN_BOLD_BRIGHT + "# Server: " + RESET);
+    port = Utilidades.leerTexto(GREEN_BOLD_BRIGHT + "# Port: " + RESET);
+    user = Utilidades.leerTexto(GREEN_BOLD_BRIGHT + "# Username: " + RESET);
+    pass = Utilidades.leerTexto(GREEN_BOLD_BRIGHT + "# Password: " + BLACK);
     System.out.print(RESET);
     
-    cm = new connectionManager(ip, port, user, pass);
-    
-  } while (cm.connectDBMS() == null);
+  } while (connectionManager.connectDBMS(server, port, user, pass) == null);
   
-  cm.startShell();
+  connectionManager.startShell();
 }
 
 }
