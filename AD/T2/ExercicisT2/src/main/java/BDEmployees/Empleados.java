@@ -62,7 +62,7 @@ public static void crear(Connection connection) {
     String gender;
     do {
       gender = Utilidades.leerTexto("Genero (F/M): ").toUpperCase();
-    } while (!gender.equals("M") && !gender.equals("F") );
+    } while (!gender.equals("M") && !gender.equals("F"));
     Date hire_date = Date.valueOf(Utilidades.leerTexto("Fecha de contratacion (ej. 1956-02-26): "));
     
     String sentenciaPreparada = "INSERT INTO " + tabla + " VALUES (?,?,?,?,?,?)";
@@ -85,16 +85,27 @@ public static void crear(Connection connection) {
 public static void modificar(Connection connection) {
   try {
     // Queremos modificar un departamento existente, pidiendo al usuario los datos a modificar
-    System.out.println("Del departamento a modificar, dame los siguientes datos:");
-    String old_dept_no = Utilidades.leerTexto("Numero actual: ");
-    String dept_no = Utilidades.leerTexto("Numero nuevo: ");
-    String dept_name = Utilidades.leerTexto("Nombre nuevo: ");
+    System.out.println("Del empleado a modificar, dame los siguientes datos:");
+    int old_emp_no = Utilidades.leerEntero("Numero de empleado actual: ");
+    int emp_no = Utilidades.leerEntero("Numero de empleado nuevo: ");
+    Date birth_date = Date.valueOf(Utilidades.leerTexto("Cumpleaños (ej. 1956-02-26): "));
+    String first_name = Utilidades.leerTexto("Nombre: ");
+    String last_name = Utilidades.leerTexto("Apellido: ");
+    String gender;
+    do {
+      gender = Utilidades.leerTexto("Genero (F/M): ").toUpperCase();
+    } while (!gender.equals("M") && !gender.equals("F"));
+    Date hire_date = Date.valueOf(Utilidades.leerTexto("Fecha de contratacion (ej. 1956-02-26): "));
     
-    String sentenciaPreparada = "UPDATE " + tabla + " SET  dept_no = (?), dept_name = (?) WHERE dept_no = (?);";
+    String sentenciaPreparada = "UPDATE " + tabla + " SET  emp_no = (?), birth_date = (?), first_name = (?), last_name = (?), gender = (?), hire_date = (?) WHERE emp_no = (?);";
     PreparedStatement pst = connection.prepareStatement(sentenciaPreparada);
-    pst.setString(1, dept_no);
-    pst.setString(2, dept_name);
-    pst.setString(3, old_dept_no);
+    pst.setInt(1, emp_no);
+    pst.setDate(2, birth_date);
+    pst.setString(3, first_name);
+    pst.setString(4, last_name);
+    pst.setString(5, gender);
+    pst.setDate(6, hire_date);
+    pst.setInt(7, old_emp_no);
     int res = pst.executeUpdate();
     
     System.out.println("\nModificadas " + res + " filas.");
