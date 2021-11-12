@@ -1,3 +1,5 @@
+package ExamplesProgramacioConcurrent;
+
 import java.io.*;
 
 public class StreamsIODemo2 {

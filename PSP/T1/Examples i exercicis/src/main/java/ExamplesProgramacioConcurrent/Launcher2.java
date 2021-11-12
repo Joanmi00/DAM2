@@ -1,3 +1,5 @@
+package ExamplesProgramacioConcurrent;
+
 public class Launcher2 {
 public static void main(String[] args) {
   try {

@@ -1,3 +1,5 @@
+package ExamplesProgramacioConcurrent;
+
 public class RuntimeDemo {
 // r serà una referència a l'entorn d'execució actual
 protected Runtime r = Runtime.getRuntime();

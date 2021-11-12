@@ -17,7 +17,7 @@ optional arguments:
                         Size of windows
 '''
 
-from PySide6.QtWidgets import QApplication,  QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 # Importamos sys si necesitamos usar argumentos
 import sys
 # Libreria para pasar argumentos del comando
@@ -25,21 +25,31 @@ import argparse
 
 
 class MainWindow(QMainWindow):
-    def __init__(self, title="La meua aplicació", text="Aceptar"):
+    def __init__(self, args):
         super().__init__()
+        title, text, fixed, size_x, size_y = "La meua aplicació", "Aceptar", False, 300, 200
         # Main window config
+        if args.title:
+            title = args.title
+        if args.button_text:
+            text = args.button_text
+        if args.fixed_size:
+            fixed = args.fixed_size
+        if args.size:
+            size_x, size_y = args.size
         self.setWindowTitle(title)
-        self.setGeometry(600, 300, 300, 200)
-        self.setMinimumSize(200, 150)
-        self.setMaximumSize(400, 250)
-        # self.setFixedSize(400,600)
+        # self.setMinimumSize(200, 150)
+        # self.setMaximumSize(1200, 800)
+        self.setGeometry(600, 400, size_x, size_y)
+        if(fixed):
+            self.setFixedSize(size_x, size_y)
 
         # QPushButton
         self.button = QPushButton(text)
         self.setCentralWidget(self.button)
         self.button.clicked.connect(QApplication.instance().quit)
-        # self.button.show() No hace falta porque button es parte the la ventana
-        # y ya se hace un show de la ventana
+        # self.button.show() - No hace falta porque button es
+        # parte de la ventana y ya se hace un show de la ventana
 
         # Status bar
         self.statusBar().showMessage('Alfre')
@@ -47,23 +57,18 @@ class MainWindow(QMainWindow):
 
 def main():
     # argparse
-    parser = argparse.ArgumentParser(description='Crear una ventana.')
-    parser.add_argument("echo", help="echo the string you use here")
-    # parser.add_argument('integers', metavar='N', type=int,
-    #                     nargs='+', help='an integer for the accumulator')
-    # parser.add_argument('--sum', dest='accumulate', action='store_const',
-    #                     const=sum, default=max,
-    #                     help='sum the integers (default: find the max)')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--title", help="Title of application")
+    parser.add_argument("-b", "--button-text", help="Button text")
+    parser.add_argument("-f", "--fixed-size", action="store_true",
+                        help="Window fixed size")
+    parser.add_argument("-s", "--size", nargs=2, metavar=("SIZE_X", "SIZE_Y"), type=int,
+                        help="Window's size")
     args = parser.parse_args()
-    print(args.echo)
-    # print(args.accumulate(args.integers))
 
     # PySide6
-    app = QApplication(sys.argv)
-    if len(sys.argv) >= 3:
-        window = MainWindow(sys.argv[1], sys.argv[2])
-    else:
-        window = MainWindow()
+    app = QApplication(args)
+    window = MainWindow(args)
     window.show()
     sys.exit(app.exec())
 
